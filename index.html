@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수리나무학원 - 고1 영어 18~20번 독해 집중 학습</title>
+    <title>수리나무학원 - 21~22 Beliefs & Listening</title>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         :root {
             --main: #1a5c9a;
             --accent: #f5a623;
-            --light: #eaf4ff;
+            --light: #eef7ff;
             --bg: #f3f8ff;
-            --text: #16324f;
+            --text: #102033;
             --green: #27ae60;
             --red: #e74c3c;
             --shadow: 0 8px 32px rgba(74,63,160,0.13);
@@ -22,15 +22,15 @@
         #app { max-width: 480px; margin: 0 auto; background: white; border-radius: 24px; box-shadow: var(--shadow); overflow: hidden; padding-bottom: 30px; position: relative; }
 
         /* HEADER */
-        .header { background: linear-gradient(135deg, #1a5c9a 0%, #0f355c 100%); color: white; padding: 28px 20px 20px; text-align: center; }
-        .header-badge { background: var(--accent); color: #1e3a00; font-size: 11px; font-weight: 900; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; letter-spacing: 1px; }
+        .header { background: linear-gradient(135deg, #1a5c9a 0%, #0f355a 100%); color: white; padding: 28px 20px 20px; text-align: center; }
+        .header-badge { background: var(--accent); color: #3b2600; font-size: 11px; font-weight: 900; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; letter-spacing: 1px; }
         .header h1 { margin: 0 0 4px; font-size: 19px; font-weight: 900; line-height: 1.3; }
         .header p { margin: 0; font-size: 13px; opacity: 0.8; }
 
         /* NAV */
         .nav { display: flex; padding: 12px 12px 0; gap: 6px; }
         .nav-btn { flex: 1; padding: 9px 2px; border: none; border-radius: 10px; background: #edf2f7; color: #4a5568; font-size: 12px; font-weight: 700; cursor: pointer; transition: .2s; }
-        .nav-btn:hover { background: #ddd8f5; }
+        .nav-btn:hover { background: #d9ecff; }
         .nav-btn.active { background: var(--main); color: white; }
         .nav-btn.review-btn { background: #fde8e8; color: var(--red); }
         .nav-btn.review-btn.active { background: var(--red); color: white; }
@@ -41,11 +41,11 @@
         @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 
         /* EVO BOX */
-        .evo-box { background: var(--light); border-radius: 16px; padding: 14px 16px; margin-bottom: 14px; border: 1.5px solid #ccc8f0; }
+        .evo-box { background: var(--light); border-radius: 16px; padding: 14px 16px; margin-bottom: 14px; border: 1.5px solid #b9d9f5; }
         .evo-emoji { font-size: 2.8rem; display: inline-block; transition: transform .3s cubic-bezier(.17,.89,.32,1.27); }
         .evo-name { font-size: 14px; font-weight: 900; color: var(--main); margin: 3px 0 9px; }
-        .prog-bg { background: #ddd8f5; height: 11px; border-radius: 8px; overflow: hidden; }
-        .prog-bar { background: linear-gradient(90deg, #7bc043, #4a3fa0); height: 100%; width: 0%; transition: width .5s ease; border-radius: 8px; }
+        .prog-bg { background: #d9ecff; height: 11px; border-radius: 8px; overflow: hidden; }
+        .prog-bar { background: linear-gradient(90deg, #f5a623, #1a5c9a); height: 100%; width: 0%; transition: width .5s ease; border-radius: 8px; }
 
         /* STATUS ROW */
         .status-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
@@ -55,16 +55,16 @@
         /* WORD TEST */
         .word-display { font-size: 1.9rem; font-weight: 900; color: var(--main); margin: 14px 0 20px; text-align: center; word-break: keep-all; line-height: 1.3; }
         .options-grid { display: grid; gap: 10px; margin-bottom: 14px; }
-        .opt-btn { background: white; border: 2px solid #e2dcf5; padding: 13px 16px; border-radius: 13px; font-size: 15px; font-weight: 700; cursor: pointer; text-align: left; transition: .15s; color: var(--text); }
+        .opt-btn { background: white; border: 2px solid #cfe4f8; padding: 13px 16px; border-radius: 13px; font-size: 15px; font-weight: 700; cursor: pointer; text-align: left; transition: .15s; color: var(--text); }
         .opt-btn:hover { border-color: var(--main); background: var(--light); }
         .opt-btn.correct { background: #d4edda; border-color: var(--green); color: var(--green); transform: scale(1.02); }
         .opt-btn.wrong { background: #fde8e8; border-color: var(--red); color: var(--red); animation: shake .4s; }
 
         /* DICTATION */
-        .ko-meaning { background: #f5f0ff; border-left: 4px solid var(--main); border-radius: 10px; padding: 12px 14px; font-size: 15px; font-weight: 800; color: #2d2470; margin-bottom: 13px; word-break: keep-all; line-height: 1.6; }
+        .ko-meaning { background: #eef7ff; border-left: 4px solid var(--main); border-radius: 10px; padding: 12px 14px; font-size: 15px; font-weight: 800; color: #0f355a; margin-bottom: 13px; word-break: keep-all; line-height: 1.6; }
         #answer-area { min-height: 56px; border: 2px dashed var(--main); background: var(--light); padding: 11px; border-radius: 13px; display: flex; flex-wrap: wrap; gap: 7px; align-items: center; justify-content: center; margin-bottom: 10px; transition: background .3s; }
         #scramble-area { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; min-height: 44px; margin-bottom: 13px; }
-        .word-chip { background: white; border: 2px solid #ccc8f0; padding: 8px 13px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; transition: .15s; user-select: none; touch-action: manipulation; }
+        .word-chip { background: white; border: 2px solid #b9d9f5; padding: 8px 13px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; transition: .15s; user-select: none; touch-action: manipulation; }
         .word-chip:active { transform: translateY(2px); }
         .sortable-ghost { opacity: .35; background: #edf2f7 !important; }
         .sortable-drag { background: var(--main) !important; color: white !important; transform: scale(1.06) !important; }
@@ -76,26 +76,26 @@
         .play-btn.playing { background: var(--red); }
 
         /* ANALYSIS */
-        .analysis-ko { background: var(--light); border-left: 4px solid var(--main); border-radius: 10px; padding: 12px 14px; font-size: 15px; font-weight: 800; color: #2d2470; margin-bottom: 13px; word-break: keep-all; line-height: 1.6; }
+        .analysis-ko { background: var(--light); border-left: 4px solid var(--main); border-radius: 10px; padding: 12px 14px; font-size: 15px; font-weight: 800; color: #0f355a; margin-bottom: 13px; word-break: keep-all; line-height: 1.6; }
         .stage-badge { padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 800; }
         .stage1 { background: #c6f6d5; color: #276749; }
-        .stage2 { background: #e0d9ff; color: #4a3fa0; }
+        .stage2 { background: #e0d9ff; color: #1a5c9a; }
         .chunks-wrap { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 13px; }
-        .chunk-card { border: 2px solid #e2dcf5; border-radius: 10px; min-width: 66px; background: white; cursor: pointer; overflow: hidden; transition: .2s; }
+        .chunk-card { border: 2px solid #cfe4f8; border-radius: 10px; min-width: 66px; background: white; cursor: pointer; overflow: hidden; transition: .2s; }
         .chunk-card.active { border-color: var(--main); box-shadow: 0 0 0 3px rgba(74,63,160,.15); transform: translateY(-2px); }
         .chunk-card.done  { border-color: var(--green); background: #f0fff4; pointer-events: none; }
         .chunk-card.done2 { border-color: var(--main); background: var(--light); pointer-events: none; }
-        .chunk-en { padding: 7px 8px; font-size: 12px; font-weight: 800; background: #f7f5ff; border-bottom: 1px dashed #e2dcf5; text-align: center; }
+        .chunk-en { padding: 7px 8px; font-size: 12px; font-weight: 800; background: #f6fbff; border-bottom: 1px dashed #cfe4f8; text-align: center; }
         .chunk-ans { padding: 5px 6px; font-size: 11px; font-weight: 900; color: #a0aec0; text-align: center; min-height: 22px; }
         .choices-wrap { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; margin-bottom: 10px; }
         .choice-btn { flex: 1 1 calc(33% - 7px); padding: 10px 4px; background: #edf2f7; border: none; border-radius: 10px; font-size: 12px; font-weight: 800; color: var(--text); cursor: pointer; transition: .15s; line-height: 1.3; text-align: center; }
-        .choice-btn:active { background: #ccc8f0; transform: scale(.96); }
+        .choice-btn:active { background: #b9d9f5; transform: scale(.96); }
         .info-box { display: none; background: white; border: 2.5px solid var(--accent); border-radius: 14px; padding: 16px; margin-top: 13px; animation: fadeIn .35s; }
         .info-box.show { display: block; }
         .info-title { font-size: 15px; font-weight: 900; margin-bottom: 10px; }
-        .detail-row { background: #f7f5ff; padding: 9px 12px; border-radius: 8px; margin-bottom: 7px; border-left: 3px solid var(--main); font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.6; }
-        .pattern-box { background: #f5f0ff; border: 3px dashed var(--main); border-radius: 14px; padding: 18px; text-align: center; margin-top: 13px; animation: fadeIn .4s; }
-        .pattern-title { font-size: 16px; color: #2d2470; font-weight: 900; margin-bottom: 8px; }
+        .detail-row { background: #f6fbff; padding: 9px 12px; border-radius: 8px; margin-bottom: 7px; border-left: 3px solid var(--main); font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.6; }
+        .pattern-box { background: #eef7ff; border: 3px dashed var(--main); border-radius: 14px; padding: 18px; text-align: center; margin-top: 13px; animation: fadeIn .4s; }
+        .pattern-title { font-size: 16px; color: #0f355a; font-weight: 900; margin-bottom: 8px; }
         .pattern-val { font-size: 18px; color: var(--main); font-weight: 900; }
 
         /* COMMON BTNS */
@@ -127,13 +127,13 @@
         .del-btn { background: #edf2f7; border: none; padding: 5px 9px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; color: #718096; }
 
         /* COMBO */
-        #combo { position: absolute; top: 28%; left: 50%; transform: translate(-50%,-50%) scale(.5); font-size: 2.8rem; font-weight: 900; color: #7bc043; text-shadow: 0 3px 10px rgba(123,192,67,.5); opacity: 0; pointer-events: none; z-index: 99; }
+        #combo { position: absolute; top: 28%; left: 50%; transform: translate(-50%,-50%) scale(.5); font-size: 2.8rem; font-weight: 900; color: #f5a623; text-shadow: 0 3px 10px rgba(123,192,67,.5); opacity: 0; pointer-events: none; z-index: 99; }
         .combo-pop { animation: comboAnim 1s cubic-bezier(.17,.89,.32,1.27) forwards; }
         @keyframes comboAnim { 0%{opacity:0;transform:translate(-50%,-30%) scale(.5)} 20%{opacity:1;transform:translate(-50%,-50%) scale(1.2)} 80%{opacity:1;transform:translate(-50%,-50%) scale(1)} 100%{opacity:0;transform:translate(-50%,-60%) scale(.8)} }
         @keyframes shake { 0%{transform:translateX(0)} 25%{transform:translateX(-5px)} 50%{transform:translateX(5px)} 75%{transform:translateX(-5px)} 100%{transform:translateX(0)} }
 
-        .setup-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 13px; background: white; border: 1.5px solid #e2dcf5; padding: 9px 13px; border-radius: 12px; }
-        .setup-row input { padding: 6px 8px; font-size: 14px; border: 1.5px solid #e2dcf5; border-radius: 8px; width: 55px; text-align: center; }
+        .setup-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 13px; background: white; border: 1.5px solid #cfe4f8; padding: 9px 13px; border-radius: 12px; }
+        .setup-row input { padding: 6px 8px; font-size: 14px; border: 1.5px solid #cfe4f8; border-radius: 8px; width: 55px; text-align: center; }
         .setup-row button { padding: 7px 12px; background: var(--main); color: white; border: none; border-radius: 8px; font-weight: 800; font-size: 13px; cursor: pointer; }
     </style>
 </head>
@@ -141,9 +141,9 @@
 <div id="app">
     <div id="combo"></div>
     <div class="header">
-        <div class="header-badge">고1 영어 · 18~20번</div>
-        <h1>📘 Reading 18~20 집중 학습</h1>
-        <p>수리나무학원 스마트 영어 학습 · 단어·영작·분석</p>
+        <div class="header-badge">고1 영어 · 21~22번</div>
+        <h1>🧠 Beliefs & Better Listening</h1>
+        <p>수리나무학원 스마트 영어 학습 · iPhone 음성 최적화</p>
     </div>
 
     <div class="nav">
@@ -159,7 +159,7 @@
         <div id="word-intro" class="intro-wrap">
             <div class="intro-icon">🥚</div>
             <h2>전설의 용 키우기!</h2>
-            <p>18~20번 핵심 단어를 맞히며<br>알을 멋진 용으로 진화시켜 보세요.</p>
+            <p>지문 핵심 단어를 맞히며<br>알을 멋진 용으로 진화시켜 보세요.</p>
             <button class="primary-btn" onclick="initAudio();startWord()">테스트 시작하기 🚀</button>
         </div>
         <div id="word-quiz" style="display:none">
@@ -203,7 +203,7 @@
         <div id="answer-area"></div>
         <div id="scramble-area"></div>
         <div class="audio-row">
-            <button id="speed-btn" class="audio-btn speed-btn" onclick="toggleSpeed()">🐇 보통 속도</button>
+            <button id="speed-btn" class="audio-btn speed-btn" onclick="toggleSpeed()">🍎 iPhone 보통</button>
             <button id="play-btn" class="audio-btn play-btn" onclick="toggleAudio()">▶️ 원어민 음성 재생</button>
         </div>
     </div>
@@ -213,7 +213,7 @@
         <div id="anal-intro" class="intro-wrap">
             <div class="intro-icon">🥚</div>
             <h2>문장 마스터 용 키우기!</h2>
-            <p>18~20번 주요 문장을 2단계로 분석해서<br>전설의 용으로 진화시켜 보세요.</p>
+            <p>핵심 문장을 2단계로 분석해서<br>전설의 용으로 진화시켜 보세요.</p>
             <button class="primary-btn" onclick="initAudio();startAnal()">분석 훈련 시작하기 🚀</button>
         </div>
         <div id="anal-quiz" style="display:none">
@@ -265,356 +265,301 @@
 
 <script>
 // ============================================================
-// DATA  ─  2026 고1 영어 18~20번 독해 집중 학습
+// DATA  ─  High School English 21~22
 // ============================================================
 
-// ── 1. WORD LIST (56개) ──────────────────────────────────────
+// ── 1. WORD LIST ────────────────────────────────────────────
 const wordList = [
     {
-        "en": "owner",
-        "ko": "주인, 소유자"
+        "en": "common sense",
+        "ko": "상식"
     },
     {
-        "en": "coordinator",
-        "ko": "조정자, 담당자"
+        "en": "inner belief",
+        "ko": "내면의 믿음"
     },
     {
-        "en": "community",
-        "ko": "지역사회, 공동체"
+        "en": "drive",
+        "ko": "움직이게 하다, 유발하다"
     },
     {
-        "en": "dog-friendly",
-        "ko": "반려견 친화적인"
+        "en": "external behavior",
+        "ko": "외적 행동"
     },
     {
-        "en": "recently",
-        "ko": "최근에"
+        "en": "be attracted to",
+        "ko": "~에게 끌리다"
     },
     {
-        "en": "open",
-        "ko": "열다, 개장하다"
+        "en": "certain",
+        "ko": "특정한"
     },
     {
-        "en": "provide",
-        "ko": "제공하다"
+        "en": "be likely to",
+        "ko": "~할 가능성이 있다"
     },
     {
-        "en": "enjoyable",
-        "ko": "즐거운"
+        "en": "socialize",
+        "ko": "어울리다, 교제하다"
     },
     {
-        "en": "experience",
-        "ko": "경험"
+        "en": "favor",
+        "ko": "선호하다"
     },
     {
-        "en": "grassy",
-        "ko": "풀이 많은, 잔디가 있는"
+        "en": "brand",
+        "ko": "상표, 브랜드"
     },
     {
-        "en": "separate",
-        "ko": "분리된, 별도의"
+        "en": "toothpaste",
+        "ko": "치약"
     },
     {
-        "en": "space",
-        "ko": "공간"
+        "en": "predict",
+        "ko": "예측하다"
     },
     {
-        "en": "ensure",
-        "ko": "보장하다, 확실히 하다"
+        "en": "public behavior",
+        "ko": "공적인 행동"
     },
     {
-        "en": "safety",
-        "ko": "안전"
+        "en": "overall",
+        "ko": "전반적으로"
     },
     {
-        "en": "bench",
-        "ko": "벤치"
+        "en": "obviously",
+        "ko": "명백히"
     },
     {
-        "en": "rest",
-        "ko": "쉬다, 휴식하다"
-    },
-    {
-        "en": "newly opened",
-        "ko": "새로 개장한"
-    },
-    {
-        "en": "check in",
-        "ko": "탑승 수속을 하다, 체크인하다"
-    },
-    {
-        "en": "flight",
-        "ko": "항공편, 비행"
-    },
-    {
-        "en": "expectation",
-        "ko": "기대"
-    },
-    {
-        "en": "backpacking trip",
-        "ko": "배낭여행"
-    },
-    {
-        "en": "look forward to",
-        "ko": "~을 기대하다"
-    },
-    {
-        "en": "museum",
-        "ko": "박물관"
-    },
-    {
-        "en": "approach",
-        "ko": "다가가다"
-    },
-    {
-        "en": "counter",
-        "ko": "창구, 계산대"
-    },
-    {
-        "en": "airline employee",
-        "ko": "항공사 직원"
-    },
-    {
-        "en": "passport",
-        "ko": "여권"
-    },
-    {
-        "en": "realize",
-        "ko": "깨닫다"
-    },
-    {
-        "en": "ruin",
-        "ko": "망치다"
-    },
-    {
-        "en": "heartbroken",
-        "ko": "상심한"
-    },
-    {
-        "en": "board",
-        "ko": "탑승하다"
-    },
-    {
-        "en": "delay",
-        "ko": "미루다, 연기하다"
-    },
-    {
-        "en": "habit",
-        "ko": "습관"
-    },
-    {
-        "en": "surprise",
-        "ko": "놀라게 하다"
-    },
-    {
-        "en": "continually",
-        "ko": "계속해서"
-    },
-    {
-        "en": "astonish",
-        "ko": "깜짝 놀라게 하다"
-    },
-    {
-        "en": "degree",
-        "ko": "정도"
-    },
-    {
-        "en": "influence",
-        "ko": "영향을 미치다"
-    },
-    {
-        "en": "sheer convenience",
-        "ko": "순전한 편리함"
-    },
-    {
-        "en": "amount",
-        "ko": "양, 정도"
-    },
-    {
-        "en": "effort",
-        "ko": "노력"
-    },
-    {
-        "en": "decision making",
-        "ko": "의사 결정"
-    },
-    {
-        "en": "action",
-        "ko": "행동"
-    },
-    {
-        "en": "formation",
-        "ko": "형성"
+        "en": "reflect",
+        "ko": "반영하다"
     },
     {
         "en": "remarkable",
         "ko": "놀라운, 주목할 만한"
     },
     {
-        "en": "likely",
-        "ko": "~할 가능성이 있는"
+        "en": "turn out",
+        "ko": "~인 것으로 드러나다"
     },
     {
-        "en": "pay attention to",
-        "ko": "~에 주의를 기울이다"
+        "en": "arrow",
+        "ko": "화살표, 방향"
     },
     {
-        "en": "activity",
-        "ko": "활동"
+        "en": "reverse direction",
+        "ko": "반대 방향"
     },
     {
-        "en": "wastebasket",
-        "ko": "쓰레기통"
+        "en": "social psychologist",
+        "ko": "사회 심리학자"
     },
     {
-        "en": "front door",
-        "ko": "현관문"
+        "en": "observe",
+        "ko": "말하다, 관찰하다"
     },
     {
-        "en": "mail sorting",
-        "ko": "우편물 정리"
+        "en": "teach",
+        "ko": "가르치다"
     },
     {
-        "en": "slightly",
-        "ko": "약간"
+        "en": "way of acting",
+        "ko": "행동 방식"
     },
     {
-        "en": "procrastinate",
-        "ko": "미루다"
+        "en": "way of thinking",
+        "ko": "사고방식"
     },
     {
-        "en": "chore",
-        "ko": "허드렛일, 집안일"
+        "en": "silence vow",
+        "ko": "침묵 서약"
     },
     {
-        "en": "distant",
-        "ko": "멀리 떨어진"
+        "en": "daily life",
+        "ko": "일상생활"
     },
     {
-        "en": "stay in touch",
-        "ko": "연락하고 지내다"
+        "en": "challenge yourself",
+        "ko": "스스로 도전하다"
+    },
+    {
+        "en": "entire day",
+        "ko": "하루 종일"
+    },
+    {
+        "en": "absolutely",
+        "ko": "절대적으로, 반드시"
+    },
+    {
+        "en": "widely observed",
+        "ko": "널리 관찰된"
+    },
+    {
+        "en": "behavioral psychology",
+        "ko": "행동 심리학"
+    },
+    {
+        "en": "expert",
+        "ko": "전문가"
+    },
+    {
+        "en": "first date",
+        "ko": "첫 데이트"
+    },
+    {
+        "en": "tend to",
+        "ko": "~하는 경향이 있다"
+    },
+    {
+        "en": "conversation",
+        "ko": "대화"
+    },
+    {
+        "en": "waiting for our own turn",
+        "ko": "우리 차례를 기다리는 것"
+    },
+    {
+        "en": "miss",
+        "ko": "놓치다"
+    },
+    {
+        "en": "mentally",
+        "ko": "마음속으로"
+    },
+    {
+        "en": "rehearse",
+        "ko": "예행연습하다"
+    },
+    {
+        "en": "utterance",
+        "ko": "발언"
+    },
+    {
+        "en": "eliminate",
+        "ko": "없애다"
+    },
+    {
+        "en": "mini-silence",
+        "ko": "짧은 침묵"
+    },
+    {
+        "en": "opening",
+        "ko": "기회, 빈틈"
+    },
+    {
+        "en": "express",
+        "ko": "표현하다"
+    },
+    {
+        "en": "be limited to",
+        "ko": "~로 제한되다"
+    },
+    {
+        "en": "attend to",
+        "ko": "주의를 기울이다"
+    },
+    {
+        "en": "be attuned to",
+        "ko": "~에 맞추다, 민감해지다"
+    },
+    {
+        "en": "respond to",
+        "ko": "~에 응답하다"
+    },
+    {
+        "en": "discover",
+        "ko": "발견하다"
     }
 ];
 
-// ── 2. SENTENCE LIST (26문장: 18~20번 지문 최대 반영) ──────────────────────────────────
+// ── 2. SENTENCE LIST ────────────────────────────────────────
 const sentenceList = [
     {
-        "en": "Dear Dog Owners,",
-        "ko": "반려견 주인 여러분께,"
+        "en": "It is common sense that people's inner beliefs may drive their external behavior.",
+        "ko": "사람들의 내면의 믿음이 외적인 행동을 이끌 수 있다는 것은 상식이다."
     },
     {
-        "en": "My name is Lily Paxton, and I'm the town's Pet Program Coordinator.",
-        "ko": "제 이름은 Lily Paxton이며, 저는 마을의 반려동물 프로그램 담당자입니다."
+        "en": "If you're attracted to a certain person, you should be more likely to socialize with that person.",
+        "ko": "특정한 사람에게 끌린다면, 당신은 그 사람과 어울릴 가능성이 더 높다."
     },
     {
-        "en": "As part of our goal to make the community more dog-friendly, we recently opened a new dog park.",
-        "ko": "지역사회를 더 반려견 친화적으로 만들려는 목표의 일환으로, 우리는 최근 새로운 반려견 공원을 개장했습니다."
+        "en": "If you favor a brand of toothpaste, you're more likely to buy it.",
+        "ko": "어떤 치약 브랜드를 선호한다면, 당신은 그것을 살 가능성이 더 높다."
     },
     {
-        "en": "The park was designed to provide an enjoyable experience for both dogs and owners.",
-        "ko": "그 공원은 반려견과 주인 모두에게 즐거운 경험을 제공하도록 설계되었습니다."
+        "en": "Our internal thoughts don't always predict our public behavior.",
+        "ko": "우리의 내적 생각이 항상 우리의 공적인 행동을 예측하는 것은 아니다."
     },
     {
-        "en": "There are big grassy areas where your dogs can run, jump, and play.",
-        "ko": "여러분의 반려견들이 달리고, 뛰고, 놀 수 있는 넓은 잔디 구역들이 있습니다."
+        "en": "Overall, what we do obviously reflects what we think.",
+        "ko": "전반적으로, 우리가 하는 일은 우리가 생각하는 것을 명백히 반영한다."
     },
     {
-        "en": "We have separate spaces for small dogs and big dogs, to ensure safety.",
-        "ko": "안전을 보장하기 위해 작은 개와 큰 개를 위한 별도의 공간이 있습니다."
+        "en": "Beliefs and behaviors are also related in a more remarkable way.",
+        "ko": "믿음과 행동은 또한 더 놀라운 방식으로 관련되어 있다."
     },
     {
-        "en": "You'll also find lots of benches and areas for resting and staying cool.",
-        "ko": "여러분은 또한 쉬고 시원하게 있을 수 있는 많은 벤치와 구역을 발견할 것입니다."
+        "en": "It turns out that the arrow is as likely to point in the reverse direction.",
+        "ko": "그 화살표가 반대 방향을 가리킬 가능성도 그만큼 있다는 것이 드러난다."
     },
     {
-        "en": "We hope you will have a wonderful time with your dogs in this newly opened park.",
-        "ko": "우리는 여러분이 이 새로 개장한 공원에서 반려견들과 멋진 시간을 보내기를 바랍니다."
+        "en": "We are likely not only to think ourselves into a way of acting but also to act ourselves into a way of thinking.",
+        "ko": "우리는 생각을 통해 행동 방식을 만들 뿐 아니라, 행동을 통해 사고방식을 만들 가능성도 있다."
     },
     {
-        "en": "Maya waited in line to check in for her flight.",
-        "ko": "Maya는 항공편 탑승 수속을 하기 위해 줄을 서서 기다렸다."
+        "en": "Imagine following the spirit of a silence vow into daily life.",
+        "ko": "침묵 서약의 정신을 일상생활 속에서 따르는 것을 상상해 보라."
     },
     {
-        "en": "Her expectations about her European backpacking trip were really high.",
-        "ko": "그녀의 유럽 배낭여행에 대한 기대는 정말 컸다."
+        "en": "Challenge yourself to spend an entire day saying only what you absolutely must say.",
+        "ko": "하루 종일 반드시 말해야 하는 것만 말하도록 스스로 도전해 보라."
     },
     {
-        "en": "She had been looking forward to the trip for a year.",
-        "ko": "그녀는 1년 동안 그 여행을 기대해 왔다."
+        "en": "We too often tend to treat conversation as a game of waiting for our own turn to speak.",
+        "ko": "우리는 너무 자주 대화를 자기 차례를 기다리는 게임처럼 여기는 경향이 있다."
     },
     {
-        "en": "She couldn't wait to visit museums in Madrid and see the Eiffel Tower at night in Paris.",
-        "ko": "그녀는 마드리드의 박물관들을 방문하고 파리에서 밤에 에펠탑을 보는 것을 몹시 기다렸다."
+        "en": "We miss what's being said because we're mentally rehearsing our next utterance.",
+        "ko": "우리는 다음 발언을 마음속으로 연습하고 있기 때문에 말해지고 있는 것을 놓친다."
     },
     {
-        "en": "As she stood in line, she could feel those experiences were finally so close.",
-        "ko": "그녀가 줄에 서 있을 때, 그녀는 그 경험들이 마침내 아주 가까워졌다고 느낄 수 있었다."
+        "en": "What if you could eliminate the idea that the next available mini-silence is your next opening?",
+        "ko": "다음 짧은 침묵이 당신의 다음 발언 기회라는 생각을 없앨 수 있다면 어떨까?"
     },
     {
-        "en": "When she approached the counter, the airline employee asked to see her passport.",
-        "ko": "그녀가 창구에 다가갔을 때, 항공사 직원은 그녀의 여권을 보여 달라고 요청했다."
+        "en": "What if you were limited to fifty spoken words tomorrow?",
+        "ko": "내일 말할 수 있는 단어가 50개로 제한된다면 어떨까?"
     },
     {
-        "en": "Maya reached into her pocket but felt nothing.",
-        "ko": "Maya는 주머니에 손을 넣었지만 아무것도 느껴지지 않았다."
+        "en": "You'd listen quite differently.",
+        "ko": "당신은 상당히 다르게 들을 것이다."
     },
     {
-        "en": "She realized she had left her passport at home.",
-        "ko": "그녀는 여권을 집에 두고 왔다는 것을 깨달았다."
+        "en": "You'd attend quite carefully to every word you heard.",
+        "ko": "당신은 듣는 모든 말에 매우 주의 깊게 집중할 것이다."
     },
     {
-        "en": "Her plans were ruined.",
-        "ko": "그녀의 계획은 망가졌다."
+        "en": "You'd be attuned to what you must respond to.",
+        "ko": "당신은 반드시 응답해야 하는 것에 민감하게 맞춰질 것이다."
     },
     {
-        "en": "She was heartbroken, knowing she could not board the flight and had to delay her dream trip.",
-        "ko": "그녀는 비행기에 탈 수 없고 꿈꾸던 여행을 미뤄야 한다는 것을 알고 상심했다."
-    },
-    {
-        "en": "People often ask me, \"What surprises you most about habits?\"",
-        "ko": "사람들은 종종 나에게 '습관에 대해 가장 놀라운 점은 무엇인가요?'라고 묻는다."
-    },
-    {
-        "en": "One thing that continually astonishes me is the degree to which we're influenced by sheer convenience.",
-        "ko": "나를 계속 놀라게 하는 한 가지는 우리가 순전한 편리함에 의해 영향을 받는 정도이다."
-    },
-    {
-        "en": "The amount of effort, time, or decision making required by an action has a huge influence on habit formation.",
-        "ko": "어떤 행동에 필요한 노력, 시간, 또는 의사 결정의 양은 습관 형성에 큰 영향을 미친다."
-    },
-    {
-        "en": "To a truly remarkable extent, we're more likely to do something if it's convenient, and less likely if it's not.",
-        "ko": "정말 놀라울 정도로, 우리는 어떤 일이 편리하면 그것을 할 가능성이 더 높고, 그렇지 않으면 가능성이 더 낮다."
-    },
-    {
-        "en": "For this reason, we should pay close attention to the convenience of any activity we want to make into a habit.",
-        "ko": "이러한 이유로, 우리는 습관으로 만들고 싶은 모든 활동의 편리성에 세심한 주의를 기울여야 한다."
-    },
-    {
-        "en": "Putting a wastebasket next to our front door made mail sorting slightly more convenient.",
-        "ko": "현관문 옆에 쓰레기통을 두는 것은 우편물 정리를 약간 더 편리하게 만들었다."
-    },
-    {
-        "en": "I stopped procrastinating with this chore.",
-        "ko": "나는 이 집안일을 미루는 것을 멈추었다."
-    },
-    {
-        "en": "Many people report that they do a much better job of staying close to distant family members now that tools like group chats make it easy to stay in touch.",
-        "ko": "많은 사람들은 단체 채팅 같은 도구들이 연락하고 지내는 것을 쉽게 만들어 주기 때문에, 이제 멀리 떨어진 가족들과 더 가까이 지내는 일을 훨씬 더 잘한다고 말한다."
+        "en": "You might discover that the less you say, the more you hear.",
+        "ko": "말을 적게 할수록 더 많이 듣게 된다는 것을 발견할지도 모른다."
     }
 ];
 
-// ── 3. ANALYSIS LIST (25문장) ────────────────────────────────
+// ── 3. ANALYSIS LIST ────────────────────────────────────────
 // pos 5종류만 사용: "명사(구/절)" | "대명사" | "형용사(구/절)" | "부사(구/절)" | "동사(구)"
-// note(4번째): 실제 구조(전치사구/to부정사/동명사/접속사절 등) 상세 해설
+// role 5종류만 사용: "주어" | "서술어" | "목적어" | "보어" | "수식어"
 const analysisList = [
     [
-        "제 이름은 Lily Paxton이며, 저는 마을의 반려동물 프로그램 담당자입니다.",
+        "사람들의 내면의 믿음이 외적인 행동을 이끌 수 있다는 것은 상식이다.",
         [
             [
-                "My name",
-                "명사(구/절)",
-                "주어"
+                "It",
+                "대명사",
+                "주어",
+                "⚠️ 가주어 It — 진짜 주어는 뒤의 that절입니다."
             ],
             [
                 "is",
@@ -622,115 +567,253 @@ const analysisList = [
                 "서술어"
             ],
             [
-                "Lily Paxton",
+                "common sense",
                 "명사(구/절)",
                 "보어"
             ],
             [
-                "and",
-                "부사(구/절)",
-                "수식어",
-                "✦ 등위접속사 and (문장 연결)\n앞 문장과 뒤 문장을 대등하게 연결합니다."
-            ],
-            [
-                "I'm",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "the town's Pet Program Coordinator",
+                "that people's inner beliefs may drive their external behavior",
                 "명사(구/절)",
-                "보어"
+                "주어",
+                "✦ 접속사 that이 이끄는 명사절 (명사절 — 진주어)\\n가주어 It에 대응하는 진짜 주어입니다."
             ]
         ]
     ],
     [
-        "지역사회를 더 반려견 친화적으로 만들려는 목표의 일환으로, 우리는 최근 새로운 반려견 공원을 개장했습니다.",
+        "특정한 사람에게 끌린다면, 그 사람과 어울릴 가능성이 더 높다.",
         [
             [
-                "As part of our goal",
+                "If you're attracted to a certain person",
                 "부사(구/절)",
                 "수식어",
-                "✦ 전치사 as가 이끄는 전치사구 (부사구)\n'~의 일부로'라는 의미로 문장 전체를 수식합니다."
+                "✦ 접속사 if가 이끄는 부사절 (조건)\\n주절 전체를 수식합니다."
             ],
             [
-                "to make the community more dog-friendly",
-                "형용사(구/절)",
-                "수식어",
-                "✦ to부정사구 (형용사구 — 형용사적 용법, 한정)\n앞의 명사 goal을 수식합니다."
-            ],
-            [
-                "we",
+                "you",
                 "대명사",
                 "주어"
             ],
             [
-                "recently opened",
+                "should be",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "a new dog park",
+                "more likely",
+                "형용사(구/절)",
+                "보어"
+            ],
+            [
+                "to socialize with that person",
+                "부사(구/절)",
+                "수식어",
+                "✦ to부정사구 (부사구 — 부사적 용법)\\n형용사 likely의 내용을 보충하며 '~할 가능성이 있는' 의미를 만듭니다."
+            ]
+        ]
+    ],
+    [
+        "어떤 치약 브랜드를 선호한다면, 그것을 살 가능성이 더 높다.",
+        [
+            [
+                "If you favor a brand of toothpaste",
+                "부사(구/절)",
+                "수식어",
+                "✦ 접속사 if가 이끄는 부사절 (조건)\\n주절 전체를 수식합니다."
+            ],
+            [
+                "you're",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "more likely",
+                "형용사(구/절)",
+                "보어"
+            ],
+            [
+                "to buy it",
+                "부사(구/절)",
+                "수식어",
+                "✦ to부정사구 (부사구 — 부사적 용법)\\nlikely의 내용을 보충합니다."
+            ]
+        ]
+    ],
+    [
+        "우리의 내적 생각이 항상 우리의 공적인 행동을 예측하는 것은 아니다.",
+        [
+            [
+                "our internal thoughts",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "don't always predict",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "our public behavior",
                 "명사(구/절)",
                 "목적어"
             ]
         ]
     ],
     [
-        "그 공원은 반려견과 주인 모두에게 즐거운 경험을 제공하도록 설계되었습니다.",
+        "우리가 하는 일은 우리가 생각하는 것을 명백히 반영한다.",
         [
             [
-                "The park",
+                "what we do",
                 "명사(구/절)",
-                "주어"
+                "주어",
+                "✦ 관계대명사 what이 이끄는 명사절 (주어)\\n'우리가 하는 것'이라는 뜻으로 문장의 주어입니다."
             ],
             [
-                "was designed",
+                "obviously reflects",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "to provide an enjoyable experience",
-                "부사(구/절)",
-                "수식어",
-                "✦ to부정사구 (부사구 — 부사적 용법, 목적)\n'즐거운 경험을 제공하기 위해'라는 의미로 was designed를 수식합니다."
-            ],
-            [
-                "for both dogs and owners",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 for가 이끄는 전치사구 (부사구)\n제공 대상이 반려견과 주인 모두임을 나타냅니다."
+                "what we think",
+                "명사(구/절)",
+                "목적어",
+                "✦ 관계대명사 what이 이끄는 명사절 (목적어)\\nreflects의 목적어로 쓰였습니다."
             ]
         ]
     ],
     [
-        "여러분의 반려견들이 달리고, 뛰고, 놀 수 있는 넓은 잔디 구역들이 있습니다.",
+        "믿음과 행동은 또한 더 놀라운 방식으로 관련되어 있다.",
         [
             [
-                "There",
+                "Beliefs and behaviors",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "are related",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "also",
+                "부사(구/절)",
+                "수식어"
+            ],
+            [
+                "in a more remarkable way",
+                "부사(구/절)",
+                "수식어",
+                "✦ 전치사 in이 이끄는 전치사구 (부사구)\\n관련되는 방식을 나타냅니다."
+            ]
+        ]
+    ],
+    [
+        "화살표가 반대 방향을 가리킬 가능성도 그만큼 있다는 것이 드러난다.",
+        [
+            [
+                "It",
+                "대명사",
+                "주어",
+                "⚠️ 가주어 It — 진짜 주어는 뒤의 that절입니다."
+            ],
+            [
+                "turns out",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "that the arrow is as likely to point in the reverse direction",
+                "명사(구/절)",
+                "주어",
+                "✦ 접속사 that이 이끄는 명사절 (진주어)\\nIt turns out에 대응하는 실제 주어입니다."
+            ]
+        ]
+    ],
+    [
+        "우리는 생각을 통해 행동 방식을 만들 뿐 아니라 행동을 통해 사고방식도 만들 가능성이 있다.",
+        [
+            [
+                "we",
                 "대명사",
                 "주어"
             ],
             [
-                "are",
+                "are likely",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "big grassy areas",
-                "명사(구/절)",
-                "보어"
-            ],
-            [
-                "where your dogs can run, jump, and play",
-                "형용사(구/절)",
+                "not only to think ourselves into a way of acting but also to act ourselves into a way of thinking",
+                "부사(구/절)",
                 "수식어",
-                "✦ 관계부사 where가 이끄는 관계사절 (형용사절)\n앞의 명사 areas를 수식합니다."
+                "✦ not only A but also B 구조의 to부정사 병렬 (부사구)\\nlikely의 구체적 내용을 설명합니다."
             ]
         ]
     ],
     [
-        "안전을 보장하기 위해 작은 개와 큰 개를 위한 별도의 공간이 있습니다.",
+        "침묵 서약의 정신을 일상생활 속에서 따르는 것을 상상해 보라.",
+        [
+            [
+                "Imagine",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "following the spirit of a silence vow into daily life",
+                "명사(구/절)",
+                "목적어",
+                "✦ 동명사구 (명사구 — 명사적 용법, 목적어)\\nImagine의 목적어로 쓰였습니다."
+            ]
+        ]
+    ],
+    [
+        "하루 종일 반드시 말해야 하는 것만 말하도록 스스로 도전해 보라.",
+        [
+            [
+                "Challenge",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "yourself",
+                "대명사",
+                "목적어"
+            ],
+            [
+                "to spend an entire day saying only what you absolutely must say",
+                "부사(구/절)",
+                "수식어",
+                "✦ to부정사구 (부사구 — 부사적 용법)\\n어떤 방향으로 스스로 도전하는지 설명합니다."
+            ]
+        ]
+    ],
+    [
+        "우리는 대화를 자기 차례를 기다리는 게임처럼 여기는 경향이 있다.",
+        [
+            [
+                "we",
+                "대명사",
+                "주어"
+            ],
+            [
+                "too often tend to treat",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "conversation",
+                "명사(구/절)",
+                "목적어"
+            ],
+            [
+                "as a game of waiting for our own turn to speak",
+                "명사(구/절)",
+                "보어",
+                "✦ 전치사 as가 이끄는 보어 역할 구문\\ntreat A as B 구조에서 B가 목적격 보어처럼 쓰입니다."
+            ]
+        ]
+    ],
+    [
+        "우리는 다음 발언을 마음속으로 연습하고 있기 때문에 말해지고 있는 것을 놓친다.",
         [
             [
                 "We",
@@ -738,31 +821,85 @@ const analysisList = [
                 "주어"
             ],
             [
-                "have",
+                "miss",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "separate spaces",
+                "what's being said",
                 "명사(구/절)",
-                "목적어"
+                "목적어",
+                "✦ 관계대명사 what이 이끄는 명사절 (목적어)\\n'말해지고 있는 것'이라는 뜻입니다."
             ],
             [
-                "for small dogs and big dogs",
-                "형용사(구/절)",
-                "수식어",
-                "✦ 전치사 for가 이끄는 전치사구 (형용사구)\n앞의 명사 spaces를 수식합니다."
-            ],
-            [
-                "to ensure safety",
+                "because we're mentally rehearsing our next utterance",
                 "부사(구/절)",
                 "수식어",
-                "✦ to부정사구 (부사구 — 부사적 용법, 목적)\n'안전을 보장하기 위해'라는 의미로 문장 전체를 수식합니다."
+                "✦ 접속사 because가 이끄는 부사절 (이유)\\n놓치는 이유를 설명합니다."
             ]
         ]
     ],
     [
-        "여러분은 또한 쉬고 시원하게 있을 수 있는 많은 벤치와 구역을 발견할 것입니다.",
+        "다음 짧은 침묵이 당신의 다음 기회라는 생각을 없앨 수 있다면 어떨까?",
+        [
+            [
+                "What if",
+                "부사(구/절)",
+                "수식어",
+                "✦ 의문 표현 What if (가정)\\n'~라면 어떨까?'의 의미로 가정을 나타냅니다."
+            ],
+            [
+                "you",
+                "대명사",
+                "주어"
+            ],
+            [
+                "could eliminate",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "the idea",
+                "명사(구/절)",
+                "목적어"
+            ],
+            [
+                "that the next available mini-silence is your next opening",
+                "형용사(구/절)",
+                "수식어",
+                "✦ 접속사 that이 이끄는 동격절 (형용사절 성격)\\n앞의 명사 the idea의 내용을 설명합니다."
+            ]
+        ]
+    ],
+    [
+        "내일 말할 수 있는 단어가 50개로 제한된다면 어떨까?",
+        [
+            [
+                "What if",
+                "부사(구/절)",
+                "수식어",
+                "✦ 의문 표현 What if (가정)\\n가정 상황을 제시합니다."
+            ],
+            [
+                "you",
+                "대명사",
+                "주어"
+            ],
+            [
+                "were limited",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "to fifty spoken words tomorrow",
+                "부사(구/절)",
+                "수식어",
+                "✦ 전치사 to가 이끄는 전치사구 (부사구)\\n제한의 범위를 나타냅니다."
+            ]
+        ]
+    ],
+    [
+        "당신은 듣는 모든 말에 매우 주의 깊게 집중할 것이다.",
         [
             [
                 "You",
@@ -770,557 +907,62 @@ const analysisList = [
                 "주어"
             ],
             [
-                "will also find",
+                "would attend",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "lots of benches and areas",
-                "명사(구/절)",
-                "목적어"
+                "quite carefully",
+                "부사(구/절)",
+                "수식어"
             ],
             [
-                "for resting and staying cool",
-                "형용사(구/절)",
+                "to every word you heard",
+                "부사(구/절)",
                 "수식어",
-                "✦ 전치사 for가 이끄는 전치사구 (형용사구)\n앞의 명사 benches and areas를 수식합니다. resting과 staying은 전치사의 목적어로 쓰인 동명사입니다."
+                "✦ 전치사 to가 이끄는 전치사구 (부사구)\\nattend to의 대상이 되는 말을 나타냅니다."
             ]
         ]
     ],
     [
-        "우리는 여러분이 이 새로 개장한 공원에서 반려견들과 멋진 시간을 보내기를 바랍니다.",
+        "반드시 응답해야 하는 것에 민감하게 맞춰질 것이다.",
         [
             [
-                "We",
+                "You",
                 "대명사",
                 "주어"
             ],
             [
-                "hope",
+                "would be attuned",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "you will have a wonderful time",
+                "to what you must respond to",
+                "부사(구/절)",
+                "수식어",
+                "✦ 전치사 to + what 명사절 (부사구)\\n무엇에 맞춰지는지를 나타냅니다."
+            ]
+        ]
+    ],
+    [
+        "말을 적게 할수록 더 많이 듣게 된다는 것을 발견할지도 모른다.",
+        [
+            [
+                "You",
+                "대명사",
+                "주어"
+            ],
+            [
+                "might discover",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "that the less you say, the more you hear",
                 "명사(구/절)",
                 "목적어",
-                "✦ 접속사 that이 생략된 명사절 (목적어 역할)\nhope의 목적어로 쓰였습니다."
-            ],
-            [
-                "with your dogs",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 with가 이끄는 전치사구 (부사구)\nhave a wonderful time을 수식합니다."
-            ],
-            [
-                "in this newly opened park",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 in이 이끄는 전치사구 (부사구)\n장소를 나타내며 동사구를 수식합니다."
-            ]
-        ]
-    ],
-    [
-        "Maya는 항공편 탑승 수속을 하기 위해 줄을 서서 기다렸다.",
-        [
-            [
-                "Maya",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "waited",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "in line",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 in이 이끄는 전치사구 (부사구)\n어떤 방식으로 기다렸는지를 나타내며 waited를 수식합니다."
-            ],
-            [
-                "to check in for her flight",
-                "부사(구/절)",
-                "수식어",
-                "✦ to부정사구 (부사구 — 부사적 용법, 목적)\n'탑승 수속을 하기 위해'라는 의미로 waited를 수식합니다."
-            ]
-        ]
-    ],
-    [
-        "그녀의 유럽 배낭여행에 대한 기대는 정말 컸다.",
-        [
-            [
-                "Her expectations",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "about her European backpacking trip",
-                "형용사(구/절)",
-                "수식어",
-                "✦ 전치사 about이 이끄는 전치사구 (형용사구)\n앞의 명사 expectations를 수식합니다."
-            ],
-            [
-                "were",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "really high",
-                "형용사(구/절)",
-                "보어"
-            ]
-        ]
-    ],
-    [
-        "그녀는 1년 동안 그 여행을 기대해 왔다.",
-        [
-            [
-                "She",
-                "대명사",
-                "주어"
-            ],
-            [
-                "had been looking forward to",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "the trip",
-                "명사(구/절)",
-                "목적어"
-            ],
-            [
-                "for a year",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 for가 이끄는 전치사구 (부사구)\n기간을 나타내며 동사구를 수식합니다."
-            ]
-        ]
-    ],
-    [
-        "그녀는 마드리드의 박물관들을 방문하고 파리에서 밤에 에펠탑을 보는 것을 몹시 기다렸다.",
-        [
-            [
-                "She",
-                "대명사",
-                "주어"
-            ],
-            [
-                "couldn't wait",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "to visit museums in Madrid and see the Eiffel Tower at night in Paris",
-                "명사(구/절)",
-                "목적어",
-                "✦ to부정사구 (명사구 — 명사적 용법, 목적어 역할)\ncan't wait to V는 '~하기를 몹시 기다리다'라는 의미입니다."
-            ]
-        ]
-    ],
-    [
-        "그녀가 줄에 서 있을 때, 그녀는 그 경험들이 마침내 아주 가까워졌다고 느낄 수 있었다.",
-        [
-            [
-                "As she stood in line",
-                "부사(구/절)",
-                "수식어",
-                "✦ 접속사 as가 이끄는 부사절 (시간)\n'~할 때'의 의미로 주절 전체를 수식합니다."
-            ],
-            [
-                "she",
-                "대명사",
-                "주어"
-            ],
-            [
-                "could feel",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "those experiences were finally so close",
-                "명사(구/절)",
-                "목적어",
-                "✦ 접속사 that이 생략된 명사절 (목적어 역할)\nfeel의 목적어로 쓰였습니다."
-            ]
-        ]
-    ],
-    [
-        "그녀가 창구에 다가갔을 때, 항공사 직원은 그녀의 여권을 보여 달라고 요청했다.",
-        [
-            [
-                "When she approached the counter",
-                "부사(구/절)",
-                "수식어",
-                "✦ 접속사 when이 이끄는 부사절 (시간)\n주절 전체를 수식합니다."
-            ],
-            [
-                "the airline employee",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "asked",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "to see her passport",
-                "명사(구/절)",
-                "목적어",
-                "✦ to부정사구 (명사구 — 명사적 용법, 목적어 역할)\nask to V는 '~하게 해 달라고 요청하다'의 의미입니다."
-            ]
-        ]
-    ],
-    [
-        "Maya는 주머니에 손을 넣었지만 아무것도 느껴지지 않았다.",
-        [
-            [
-                "Maya",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "reached",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "into her pocket",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 into가 이끄는 전치사구 (부사구)\n손을 넣은 방향을 나타내며 reached를 수식합니다."
-            ],
-            [
-                "but",
-                "부사(구/절)",
-                "수식어",
-                "✦ 등위접속사 but (대조)\n앞뒤 내용을 대조적으로 연결합니다."
-            ],
-            [
-                "felt",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "nothing",
-                "대명사",
-                "목적어"
-            ]
-        ]
-    ],
-    [
-        "그녀는 여권을 집에 두고 왔다는 것을 깨달았다.",
-        [
-            [
-                "She",
-                "대명사",
-                "주어"
-            ],
-            [
-                "realized",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "she had left her passport at home",
-                "명사(구/절)",
-                "목적어",
-                "✦ 접속사 that이 생략된 명사절 (목적어 역할)\nrealized의 목적어로 쓰였습니다."
-            ]
-        ]
-    ],
-    [
-        "그녀의 계획은 망가졌다.",
-        [
-            [
-                "Her plans",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "were ruined",
-                "동사(구)",
-                "서술어"
-            ]
-        ]
-    ],
-    [
-        "그녀는 비행기에 탈 수 없고 꿈꾸던 여행을 미뤄야 한다는 것을 알고 상심했다.",
-        [
-            [
-                "She",
-                "대명사",
-                "주어"
-            ],
-            [
-                "was",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "heartbroken",
-                "형용사(구/절)",
-                "보어"
-            ],
-            [
-                "knowing she could not board the flight and had to delay her dream trip",
-                "부사(구/절)",
-                "수식어",
-                "✦ 분사구문 (부사구 — 이유/상황 설명)\n그녀가 상심한 이유와 상황을 설명하며 주절을 수식합니다."
-            ]
-        ]
-    ],
-    [
-        "사람들은 종종 나에게 '습관에 대해 가장 놀라운 점은 무엇인가요?'라고 묻는다.",
-        [
-            [
-                "People",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "often ask",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "me",
-                "대명사",
-                "목적어"
-            ],
-            [
-                "What surprises you most about habits?",
-                "명사(구/절)",
-                "목적어",
-                "✦ 직접화법으로 쓰인 명사절 상당 표현 (목적어 역할)\nask의 내용 목적어로 쓰였습니다."
-            ]
-        ]
-    ],
-    [
-        "나를 계속 놀라게 하는 한 가지는 우리가 순전한 편리함에 의해 영향을 받는 정도이다.",
-        [
-            [
-                "One thing",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "that continually astonishes me",
-                "형용사(구/절)",
-                "수식어",
-                "✦ 관계대명사 that이 이끄는 관계사절 (형용사절)\n앞의 명사 One thing을 수식합니다."
-            ],
-            [
-                "is",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "the degree",
-                "명사(구/절)",
-                "보어"
-            ],
-            [
-                "to which we're influenced by sheer convenience",
-                "형용사(구/절)",
-                "수식어",
-                "✦ 관계대명사 which가 이끄는 관계사절 (형용사절)\n앞의 명사 degree를 수식합니다."
-            ]
-        ]
-    ],
-    [
-        "어떤 행동에 필요한 노력, 시간, 또는 의사 결정의 양은 습관 형성에 큰 영향을 미친다.",
-        [
-            [
-                "The amount of effort, time, or decision making",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "required by an action",
-                "형용사(구/절)",
-                "수식어",
-                "✦ 과거분사구 (형용사구)\n앞의 명사구 The amount를 수식합니다."
-            ],
-            [
-                "has",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "a huge influence",
-                "명사(구/절)",
-                "목적어"
-            ],
-            [
-                "on habit formation",
-                "형용사(구/절)",
-                "수식어",
-                "✦ 전치사 on이 이끄는 전치사구 (형용사구)\n앞의 명사 influence를 수식합니다."
-            ]
-        ]
-    ],
-    [
-        "정말 놀라울 정도로, 우리는 어떤 일이 편리하면 그것을 할 가능성이 더 높고, 그렇지 않으면 가능성이 더 낮다.",
-        [
-            [
-                "To a truly remarkable extent",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 to가 이끄는 전치사구 (부사구)\n문장 전체를 수식합니다."
-            ],
-            [
-                "we",
-                "대명사",
-                "주어"
-            ],
-            [
-                "'re",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "more likely to do something",
-                "형용사(구/절)",
-                "보어"
-            ],
-            [
-                "if it's convenient",
-                "부사(구/절)",
-                "수식어",
-                "✦ 접속사 if가 이끄는 부사절 (조건)\n앞 절의 상황 조건을 나타냅니다."
-            ],
-            [
-                "and less likely",
-                "형용사(구/절)",
-                "보어"
-            ],
-            [
-                "if it's not",
-                "부사(구/절)",
-                "수식어",
-                "✦ 접속사 if가 이끄는 부사절 (조건)\n편리하지 않을 때의 조건을 나타냅니다."
-            ]
-        ]
-    ],
-    [
-        "이러한 이유로, 우리는 습관으로 만들고 싶은 모든 활동의 편리성에 세심한 주의를 기울여야 한다.",
-        [
-            [
-                "For this reason",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 for가 이끄는 전치사구 (부사구)\n이유를 나타내며 문장 전체를 수식합니다."
-            ],
-            [
-                "we",
-                "대명사",
-                "주어"
-            ],
-            [
-                "should pay",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "close attention",
-                "명사(구/절)",
-                "목적어"
-            ],
-            [
-                "to the convenience of any activity",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 to가 이끄는 전치사구 (부사구)\npay attention to의 일부로 대상을 나타냅니다."
-            ],
-            [
-                "we want to make into a habit",
-                "형용사(구/절)",
-                "수식어",
-                "✦ 관계대명사 that이 생략된 관계사절 (형용사절)\n앞의 명사 activity를 수식합니다."
-            ]
-        ]
-    ],
-    [
-        "현관문 옆에 쓰레기통을 두는 것은 우편물 정리를 약간 더 편리하게 만들었다.",
-        [
-            [
-                "Putting a wastebasket next to our front door",
-                "명사(구/절)",
-                "주어",
-                "✦ 동명사구 (명사구 — 명사적 용법, 주어 역할)\n동명사구가 문장 전체의 주어로 쓰였습니다."
-            ],
-            [
-                "made",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "mail sorting",
-                "명사(구/절)",
-                "목적어"
-            ],
-            [
-                "slightly more convenient",
-                "형용사(구/절)",
-                "보어"
-            ]
-        ]
-    ],
-    [
-        "나는 이 집안일을 미루는 것을 멈추었다.",
-        [
-            [
-                "I",
-                "대명사",
-                "주어"
-            ],
-            [
-                "stopped",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "procrastinating",
-                "명사(구/절)",
-                "목적어",
-                "✦ 동명사 (명사구 — 명사적 용법, 목적어 역할)\nstop은 동명사를 목적어로 취해 '~하는 것을 멈추다'라는 뜻입니다."
-            ],
-            [
-                "with this chore",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 with가 이끄는 전치사구 (부사구)\n어떤 일에 대해 미루는지를 나타냅니다."
-            ]
-        ]
-    ],
-    [
-        "많은 사람들은 단체 채팅 같은 도구들이 연락하고 지내는 것을 쉽게 만들어 주기 때문에, 이제 멀리 떨어진 가족들과 더 가까이 지내는 일을 훨씬 더 잘한다고 말한다.",
-        [
-            [
-                "Many people",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "report",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "that they do a much better job of staying close to distant family members",
-                "명사(구/절)",
-                "목적어",
-                "✦ 접속사 that이 이끄는 명사절 (목적어 역할)\nreport의 목적어로 쓰였습니다."
-            ],
-            [
-                "now that tools like group chats make it easy to stay in touch",
-                "부사(구/절)",
-                "수식어",
-                "✦ 접속사 now that이 이끄는 부사절 (이유)\n'~이므로, ~이기 때문에'의 의미로 주절을 수식합니다."
+                "✦ 접속사 that이 이끄는 명사절 (목적어)\\ndiscover의 목적어이며 'the 비교급, the 비교급' 구조를 포함합니다."
             ]
         ]
     ]
@@ -1336,6 +978,41 @@ const roleList = ["주어","서술어","목적어","보어","수식어"];
 function relevantPos(idx) {
     // 항상 5개 고정 반환
     return posList;
+}
+
+
+// ============================================================
+// iPhone / iPad English Voice Optimization
+// ============================================================
+let selectedEnglishVoice = null;
+
+function loadEnglishVoice() {
+    if (!('speechSynthesis' in window)) return;
+    const voices = window.speechSynthesis.getVoices();
+    selectedEnglishVoice =
+        voices.find(v => v.lang === 'en-US' && /samantha|alex|ava|allison|nicky|english/i.test(v.name)) ||
+        voices.find(v => v.lang === 'en-US') ||
+        voices.find(v => v.lang && v.lang.startsWith('en')) ||
+        null;
+}
+
+if ('speechSynthesis' in window) {
+    loadEnglishVoice();
+    window.speechSynthesis.onvoiceschanged = loadEnglishVoice;
+}
+
+function speak(text, rate = 0.78, onend = null) {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    loadEnglishVoice();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = selectedEnglishVoice?.lang || 'en-US';
+    utterance.rate = rate;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+    if (selectedEnglishVoice) utterance.voice = selectedEnglishVoice;
+    if (onend) utterance.onend = onend;
+    window.speechSynthesis.speak(utterance);
 }
 
 let audioCtx = null, comboCount = 0;
@@ -1354,7 +1031,7 @@ function tone(f,t,d,v=0.08) {
 function sfxOK()  { tone(600,'sine',.1); setTimeout(()=>tone(800,'sine',.15),100); }
 function sfxNG()  { tone(280,'sawtooth',.2,.12); }
 function sfxEvo() { [400,500,650].forEach((f,i)=>setTimeout(()=>tone(f,'square',.2,.06),i*150)); }
-function boom()   { sfxEvo(); confetti({particleCount:140,spread:75,origin:{y:.6},colors:['#4a3fa0','#7bc043','#e74c3c','#f5a623']}); }
+function boom()   { sfxEvo(); confetti({particleCount:140,spread:75,origin:{y:.6},colors:['#1a5c9a','#f5a623','#e74c3c','#f5a623']}); }
 
 function shuffle(a) {
     let arr=[...a];
@@ -1406,14 +1083,14 @@ function showSection(id, btn) {
 }
 
 function saveHist(key, data) {
-    let arr=JSON.parse(localStorage.getItem('r1820_'+key)||'[]');
+    let arr=JSON.parse(localStorage.getItem('sr2122_'+key)||'[]');
     data.date=new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit'});
     arr.unshift(data); if(arr.length>10) arr=arr.slice(0,10);
-    localStorage.setItem('r1820_'+key,JSON.stringify(arr));
+    localStorage.setItem('sr2122_'+key,JSON.stringify(arr));
 }
 function saveWrong(w) {
-    let arr=JSON.parse(localStorage.getItem('r1820_wrong')||'[]');
-    if(!arr.find(x=>x.en===w.en)) { arr.push(w); localStorage.setItem('r1820_wrong',JSON.stringify(arr)); }
+    let arr=JSON.parse(localStorage.getItem('sr2122_wrong')||'[]');
+    if(!arr.find(x=>x.en===w.en)) { arr.push(w); localStorage.setItem('sr2122_wrong',JSON.stringify(arr)); }
 }
 
 // ============================================================
@@ -1433,9 +1110,7 @@ function loadWord() {
     const q=wList[wIdx];
     document.getElementById('w-status').innerText=`문제 ${wIdx+1} / ${wList.length}`;
     document.getElementById('w-en').innerText=q.en;
-    window.speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(q.en); u.lang='en-US'; u.rate=1.0;
-    window.speechSynthesis.speak(u);
+    speak(q.en, 0.78);
     const opts=shuffle([{t:q.ko,ok:true},...shuffle(wordList.filter(w=>w.ko!==q.ko)).slice(0,3).map(w=>({t:w.ko,ok:false}))]);
     const div=document.getElementById('w-opts'); div.innerHTML='';
     opts.forEach((o,i)=>{
@@ -1474,18 +1149,14 @@ function resetWord() { document.getElementById('word-result').style.display='non
 // 2. DICTATION
 // ============================================================
 let dIdx=0, isLoop=false, loopTimer=null, dictLoaded=false;
-const speeds=[1.0,0.75,0.55], sLabels=['🐇 보통 속도','🐢 느리게','🐌 아주 느리게'];
+const speeds=[0.78,0.62,0.5], sLabels=['🍎 iPhone 보통','🐢 느리게','🐌 아주 느리게'];
 let spIdx=0;
 
 function loopPlay() {
     if(!isLoop||!sentenceList.length) return;
-    window.speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(sentenceList[dIdx].en);
-    u.lang='en-US'; u.rate=speeds[spIdx];
-    u.onend=()=>{ if(isLoop) loopTimer=setTimeout(loopPlay,1000); };
-    window.speechSynthesis.speak(u);
+    speak(sentenceList[dIdx].en, speeds[spIdx], ()=>{ if(isLoop) loopTimer=setTimeout(loopPlay,1000); });
 }
-function stopLoop() { isLoop=false; window.speechSynthesis.cancel(); clearTimeout(loopTimer); }
+function stopLoop() { isLoop=false; if('speechSynthesis' in window) window.speechSynthesis.cancel(); clearTimeout(loopTimer); }
 function toggleAudio() { if(isLoop) stopLoop(); else{isLoop=true;loopPlay();} updatePlayBtn(); }
 function updatePlayBtn() {
     const b=document.getElementById('play-btn'); if(!b) return;
@@ -1552,9 +1223,9 @@ function jumpTo() {
     else alert(`1~${sentenceList.length} 사이 번호를 입력하세요.`);
 }
 function recDict() {
-    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('r1820_dict')||'{}');
+    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('sr2122_dict')||'{}');
     if(!h[dk]) h[dk]={count:0}; h[dk].count++;
-    localStorage.setItem('r1820_dict',JSON.stringify(h));
+    localStorage.setItem('sr2122_dict',JSON.stringify(h));
 }
 
 // ============================================================
@@ -1626,7 +1297,7 @@ function pick(val) {
                 let html='';
                 d[1].forEach(c=>{
                     if(c[3]) {
-                        const noteHtml = c[3].replace(/\\n/g,'<br>').replace(/\n/g,'<br>');
+                        const noteHtml = c[3].replace(/\n/g,'<br>');
                         html+=`<div class="detail-row"><b>${c[0]}</b><br>${noteHtml}</div>`;
                     }
                 });
@@ -1656,7 +1327,7 @@ function pick(val) {
     } else {
         sfxNG(); showCombo(false);
         card.style.borderColor='var(--red)';
-        setTimeout(()=>card.style.borderColor=card.classList.contains('active')?'var(--main)':'#e2dcf5',600);
+        setTimeout(()=>card.style.borderColor=card.classList.contains('active')?'var(--main)':'#cfe4f8',600);
     }
 }
 function startStep2() {
@@ -1697,9 +1368,9 @@ function finishAnal(early=false){
 }
 function resetAnal(){ document.getElementById('anal-result').style.display='none'; document.getElementById('anal-intro').style.display='block'; }
 function recAnal(){
-    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('r1820_anal')||'{}');
+    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('sr2122_anal')||'{}');
     if(!h[dk]) h[dk]={count:0}; h[dk].count++;
-    localStorage.setItem('r1820_anal',JSON.stringify(h));
+    localStorage.setItem('sr2122_anal',JSON.stringify(h));
 }
 
 // ============================================================
@@ -1708,14 +1379,14 @@ function recAnal(){
 function renderHistory(){
     const div=document.getElementById('hist-list'); div.innerHTML='';
     div.insertAdjacentHTML('beforeend','<div class="hist-category">📝 단어 테스트 성적</div>');
-    const wh=JSON.parse(localStorage.getItem('r1820_word')||'[]');
+    const wh=JSON.parse(localStorage.getItem('sr2122_word')||'[]');
     if(!wh.length) div.insertAdjacentHTML('beforeend','<p style="color:#a0aec0;font-size:13px">기록 없음</p>');
     else wh.slice(0,3).forEach(r=>{
         const st=r.score>=90?'<span class="stamp">마스터 🐉</span>':'';
         div.insertAdjacentHTML('beforeend',`<div class="hist-card"><div><div class="hist-date">${r.date}</div><div class="hist-score">${r.score}점 <span style="font-size:12px;color:#a0aec0">(${r.correct}/${r.total})</span></div></div>${st}</div>`);
     });
     div.insertAdjacentHTML('beforeend','<div class="hist-category">🎧 영작 달성도</div>');
-    const dh=JSON.parse(localStorage.getItem('r1820_dict')||'{}');
+    const dh=JSON.parse(localStorage.getItem('sr2122_dict')||'{}');
     const dks=Object.keys(dh).sort((a,b)=>new Date(b)-new Date(a));
     if(!dks.length) div.insertAdjacentHTML('beforeend','<p style="color:#a0aec0;font-size:13px">기록 없음</p>');
     else dks.slice(0,3).forEach(k=>{
@@ -1723,7 +1394,7 @@ function renderHistory(){
         div.insertAdjacentHTML('beforeend',`<div class="hist-card"><div><div class="hist-date">${fmtKey(k)}</div><div class="hist-score">${dh[k].count}문장 성공</div></div>${st}</div>`);
     });
     div.insertAdjacentHTML('beforeend','<div class="hist-category">🧩 문장 분석 달성도</div>');
-    const ah=JSON.parse(localStorage.getItem('r1820_anal')||'{}');
+    const ah=JSON.parse(localStorage.getItem('sr2122_anal')||'{}');
     const aks=Object.keys(ah).sort((a,b)=>new Date(b)-new Date(a));
     if(!aks.length) div.insertAdjacentHTML('beforeend','<p style="color:#a0aec0;font-size:13px">기록 없음</p>');
     else aks.slice(0,3).forEach(k=>{
@@ -1737,7 +1408,7 @@ function renderHistory(){
 // ============================================================
 function renderReview(){
     const div=document.getElementById('rev-list'); div.innerHTML='';
-    const arr=JSON.parse(localStorage.getItem('r1820_wrong')||'[]');
+    const arr=JSON.parse(localStorage.getItem('sr2122_wrong')||'[]');
     if(!arr.length){
         div.innerHTML='<div style="padding:16px;text-align:center;color:var(--green);font-weight:800;background:#f0fff4;border-radius:10px">🎉 오답이 없습니다! 완벽해요!</div>';
         return;
@@ -1751,11 +1422,11 @@ function renderReview(){
     });
 }
 function delWrong(i){
-    let arr=JSON.parse(localStorage.getItem('r1820_wrong')||'[]');
-    arr.splice(i,1); localStorage.setItem('r1820_wrong',JSON.stringify(arr)); renderReview();
+    let arr=JSON.parse(localStorage.getItem('sr2122_wrong')||'[]');
+    arr.splice(i,1); localStorage.setItem('sr2122_wrong',JSON.stringify(arr)); renderReview();
 }
 function clearWrong(){
-    if(confirm('오답 도감을 전부 비울까요?')){ localStorage.removeItem('r1820_wrong'); renderReview(); }
+    if(confirm('오답 도감을 전부 비울까요?')){ localStorage.removeItem('sr2122_wrong'); renderReview(); }
 }
 </script>
 </body>
