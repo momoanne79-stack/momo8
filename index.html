@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수리나무학원 - 21~22 Beliefs & Listening</title>
+    <title>수리나무학원 - 23 Science & Action</title>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
@@ -135,27 +135,75 @@
         .setup-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 13px; background: white; border: 1.5px solid #cfe4f8; padding: 9px 13px; border-radius: 12px; }
         .setup-row input { padding: 6px 8px; font-size: 14px; border: 1.5px solid #cfe4f8; border-radius: 8px; width: 55px; text-align: center; }
         .setup-row button { padding: 7px 12px; background: var(--main); color: white; border: none; border-radius: 8px; font-weight: 800; font-size: 13px; cursor: pointer; }
+
+
+        /* PROBLEM READING */
+        .problem-card { background: #fff; border: 2px solid #cfe4f8; border-radius: 16px; padding: 15px; margin-bottom: 14px; line-height: 1.75; }
+        .problem-title { font-size: 17px; font-weight: 900; color: var(--main); margin: 0 0 10px; }
+        .problem-passage { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; color: #1f2937; line-height: 1.9; text-align: left; }
+        .problem-vocab { text-align:right; font-size:13px; color:#4a5568; font-weight:700; margin-top:8px; }
+        .question-box { background: var(--light); border-left: 4px solid var(--main); padding: 12px 13px; border-radius: 12px; margin: 14px 0; font-size: 15px; font-weight: 900; line-height: 1.55; }
+        .choice-list { display: grid; gap: 9px; margin: 12px 0; }
+        .q-choice { width: 100%; background: white; border: 2px solid #cfe4f8; border-radius: 12px; padding: 12px 13px; text-align: left; font-size: 14px; font-weight: 800; color: var(--text); cursor: pointer; line-height: 1.45; }
+        .q-choice:hover { background: var(--light); border-color: var(--main); }
+        .q-choice.selected { border-color: var(--main); background: #eef7ff; box-shadow: 0 0 0 3px rgba(26,92,154,.12); }
+        .q-choice.correct { border-color: var(--green); background: #d4edda; color: #176b37; }
+        .q-choice.wrong { border-color: var(--red); background: #fde8e8; color: #b83227; }
+        .result-box { display:none; border-radius: 14px; padding: 14px; margin-top: 14px; line-height: 1.65; }
+        .result-box.correct { display:block; background:#f0fff4; border:2px solid var(--green); }
+        .result-box.wrong { display:block; background:#fff5f5; border:2px solid var(--red); }
+        .explain-wrap { display:none; margin-top: 14px; }
+        .explain-wrap.show { display:block; animation: fadeIn .35s; }
+        .explain-card { background: white; border: 1.5px solid #cfe4f8; border-radius: 13px; padding: 12px 13px; margin-bottom: 10px; line-height: 1.65; }
+        .ex-en { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 800; color: #102033; margin-bottom: 5px; }
+        .ex-ko { font-size: 14px; font-weight: 800; color: #0f355a; margin-bottom: 6px; }
+        .ex-gram { font-size: 13px; color: #4a5568; }
+        .pill { display:inline-block; background:#fffbeb; color:#8a6300; border:1px solid #f6c94e; border-radius:20px; padding:2px 8px; font-size:12px; font-weight:900; margin-right:4px; }
     </style>
 </head>
 <body>
 <div id="app">
     <div id="combo"></div>
     <div class="header">
-        <div class="header-badge">고1 영어 · 21~22번</div>
-        <h1>🧠 Beliefs & Better Listening</h1>
+        <div class="header-badge">고1 영어 · 23번</div>
+        <h1>🔬 Science & Action Practice</h1>
         <p>수리나무학원 스마트 영어 학습 · iPhone 음성 최적화</p>
     </div>
 
     <div class="nav">
-        <button class="nav-btn active" onclick="showSection('word-sec',this)">1.단어</button>
+        <button class="nav-btn active" onclick="showSection('problem-sec',this)">문제</button>
+        <button class="nav-btn" onclick="showSection('word-sec',this)">1.단어</button>
         <button class="nav-btn" onclick="showSection('dict-sec',this)">2.영작</button>
         <button class="nav-btn" onclick="showSection('anal-sec',this)">3.분석</button>
         <button class="nav-btn" onclick="showSection('hist-sec',this);renderHistory()">4.기록</button>
         <button class="nav-btn review-btn" onclick="showSection('rev-sec',this);renderReview()">5.오답</button>
     </div>
 
+    <!-- ===== 0. PROBLEM ===== -->
+    <div id="problem-sec" class="section active">
+        <div class="problem-card">
+            <div class="problem-title">23. 다음 글의 주제로 가장 적절한 것은?</div>
+            <div class="problem-passage">
+                Science is concerned with accumulating and understanding observations of the physical world. That understanding alone solves no problems. Individual people have to act on that understanding for it to help solve problems. For instance, science has found that regular exercise can lower your risk of heart disease. Knowing this fact is interesting, but it will do nothing for your personal health unless you act on it and actually exercise. And that’s the hard part. Reading an article about exercise is easy. Getting into an actual routine of regular exercise is harder. In this sense, science really solves no problems at all. Problems are only solved when people take the knowledge provided by science and use it. In fact, many of humanity’s biggest problems are caused by lack of action, and not lack of knowledge.
+            </div>
+            <div class="problem-vocab">* accumulate: 축적하다</div>
+        </div>
+
+        <div class="question-box">정답을 고른 뒤 채점하면, 바로 아래에 한 줄씩 해석·문법·구문·중요표현 정리가 나옵니다.</div>
+        <div class="choice-list" id="main-choices">
+            <button class="q-choice" data-n="1" onclick="selectMainChoice(this)">① advantages of putting strategic plans into action</button>
+            <button class="q-choice" data-n="2" onclick="selectMainChoice(this)">② danger of acting against the wisdom of the crowd</button>
+            <button class="q-choice" data-n="3" onclick="selectMainChoice(this)">③ difficulty in sharing scientific knowledge with the public</button>
+            <button class="q-choice" data-n="4" onclick="selectMainChoice(this)">④ problems with lacking specific knowledge about exercising</button>
+            <button class="q-choice" data-n="5" onclick="selectMainChoice(this)">⑤ need to act on scientific understanding in solving problems</button>
+        </div>
+        <button class="primary-btn" onclick="checkMainProblem()">정답 확인하고 해설 보기 ✅</button>
+        <div id="main-result" class="result-box"></div>
+        <div id="line-explain" class="explain-wrap"></div>
+    </div>
+
     <!-- ===== 1. WORD ===== -->
-    <div id="word-sec" class="section active">
+    <div id="word-sec" class="section">
         <div id="word-intro" class="intro-wrap">
             <div class="intro-icon">🥚</div>
             <h2>전설의 용 키우기!</h2>
@@ -265,301 +313,305 @@
 
 <script>
 // ============================================================
-// DATA  ─  High School English 21~22
+// DATA  ─  High School English 23
 // ============================================================
 
-// ── 1. WORD LIST ────────────────────────────────────────────
+// ── 1. WORD LIST ───────────────────────────────────────────
 const wordList = [
     {
-        "en": "common sense",
-        "ko": "상식"
+        "en": "science",
+        "ko": "과학"
     },
     {
-        "en": "inner belief",
-        "ko": "내면의 믿음"
+        "en": "be concerned with",
+        "ko": "~에 관련되다, ~에 관심을 가지다"
     },
     {
-        "en": "drive",
-        "ko": "움직이게 하다, 유발하다"
+        "en": "accumulate",
+        "ko": "축적하다"
     },
     {
-        "en": "external behavior",
-        "ko": "외적 행동"
+        "en": "understanding",
+        "ko": "이해, 이해하는 것"
     },
     {
-        "en": "be attracted to",
-        "ko": "~에게 끌리다"
+        "en": "observation",
+        "ko": "관찰"
     },
     {
-        "en": "certain",
-        "ko": "특정한"
+        "en": "physical world",
+        "ko": "물리적 세계, 현실 세계"
     },
     {
-        "en": "be likely to",
-        "ko": "~할 가능성이 있다"
+        "en": "alone",
+        "ko": "혼자서, 단독으로"
     },
     {
-        "en": "socialize",
-        "ko": "어울리다, 교제하다"
+        "en": "solve",
+        "ko": "해결하다"
     },
     {
-        "en": "favor",
-        "ko": "선호하다"
+        "en": "problem",
+        "ko": "문제"
     },
     {
-        "en": "brand",
-        "ko": "상표, 브랜드"
+        "en": "individual",
+        "ko": "개개의, 개인의"
     },
     {
-        "en": "toothpaste",
-        "ko": "치약"
+        "en": "act on",
+        "ko": "~에 따라 행동하다, 실행하다"
     },
     {
-        "en": "predict",
-        "ko": "예측하다"
+        "en": "for instance",
+        "ko": "예를 들어"
     },
     {
-        "en": "public behavior",
-        "ko": "공적인 행동"
+        "en": "regular exercise",
+        "ko": "규칙적인 운동"
     },
     {
-        "en": "overall",
-        "ko": "전반적으로"
+        "en": "lower",
+        "ko": "낮추다"
     },
     {
-        "en": "obviously",
-        "ko": "명백히"
+        "en": "risk",
+        "ko": "위험, 위험성"
     },
     {
-        "en": "reflect",
-        "ko": "반영하다"
+        "en": "heart disease",
+        "ko": "심장병"
     },
     {
-        "en": "remarkable",
-        "ko": "놀라운, 주목할 만한"
+        "en": "fact",
+        "ko": "사실"
     },
     {
-        "en": "turn out",
-        "ko": "~인 것으로 드러나다"
+        "en": "personal health",
+        "ko": "개인의 건강"
     },
     {
-        "en": "arrow",
-        "ko": "화살표, 방향"
+        "en": "unless",
+        "ko": "~하지 않는 한"
     },
     {
-        "en": "reverse direction",
-        "ko": "반대 방향"
+        "en": "actually",
+        "ko": "실제로"
     },
     {
-        "en": "social psychologist",
-        "ko": "사회 심리학자"
+        "en": "hard part",
+        "ko": "어려운 부분"
     },
     {
-        "en": "observe",
-        "ko": "말하다, 관찰하다"
+        "en": "article",
+        "ko": "글, 기사"
     },
     {
-        "en": "teach",
-        "ko": "가르치다"
+        "en": "actual",
+        "ko": "실제의"
     },
     {
-        "en": "way of acting",
-        "ko": "행동 방식"
+        "en": "routine",
+        "ko": "일상적 습관, 규칙적 절차"
     },
     {
-        "en": "way of thinking",
-        "ko": "사고방식"
+        "en": "in this sense",
+        "ko": "이런 의미에서"
     },
     {
-        "en": "silence vow",
-        "ko": "침묵 서약"
+        "en": "at all",
+        "ko": "전혀, 조금도"
     },
     {
-        "en": "daily life",
-        "ko": "일상생활"
+        "en": "be solved",
+        "ko": "해결되다"
     },
     {
-        "en": "challenge yourself",
-        "ko": "스스로 도전하다"
+        "en": "take knowledge",
+        "ko": "지식을 받아들이다, 지식을 활용하다"
     },
     {
-        "en": "entire day",
-        "ko": "하루 종일"
+        "en": "provided by science",
+        "ko": "과학에 의해 제공된"
     },
     {
-        "en": "absolutely",
-        "ko": "절대적으로, 반드시"
+        "en": "humanity",
+        "ko": "인류"
     },
     {
-        "en": "widely observed",
-        "ko": "널리 관찰된"
+        "en": "be caused by",
+        "ko": "~에 의해 야기되다"
     },
     {
-        "en": "behavioral psychology",
-        "ko": "행동 심리학"
+        "en": "lack of action",
+        "ko": "행동의 부족"
     },
     {
-        "en": "expert",
-        "ko": "전문가"
+        "en": "lack of knowledge",
+        "ko": "지식의 부족"
     },
     {
-        "en": "first date",
-        "ko": "첫 데이트"
+        "en": "put into action",
+        "ko": "실행에 옮기다"
     },
     {
-        "en": "tend to",
-        "ko": "~하는 경향이 있다"
-    },
-    {
-        "en": "conversation",
-        "ko": "대화"
-    },
-    {
-        "en": "waiting for our own turn",
-        "ko": "우리 차례를 기다리는 것"
-    },
-    {
-        "en": "miss",
-        "ko": "놓치다"
-    },
-    {
-        "en": "mentally",
-        "ko": "마음속으로"
-    },
-    {
-        "en": "rehearse",
-        "ko": "예행연습하다"
-    },
-    {
-        "en": "utterance",
-        "ko": "발언"
-    },
-    {
-        "en": "eliminate",
-        "ko": "없애다"
-    },
-    {
-        "en": "mini-silence",
-        "ko": "짧은 침묵"
-    },
-    {
-        "en": "opening",
-        "ko": "기회, 빈틈"
-    },
-    {
-        "en": "express",
-        "ko": "표현하다"
-    },
-    {
-        "en": "be limited to",
-        "ko": "~로 제한되다"
-    },
-    {
-        "en": "attend to",
-        "ko": "주의를 기울이다"
-    },
-    {
-        "en": "be attuned to",
-        "ko": "~에 맞추다, 민감해지다"
-    },
-    {
-        "en": "respond to",
-        "ko": "~에 응답하다"
-    },
-    {
-        "en": "discover",
-        "ko": "발견하다"
+        "en": "scientific understanding",
+        "ko": "과학적 이해"
     }
 ];
 
-// ── 2. SENTENCE LIST ────────────────────────────────────────
+// ── 2. SENTENCE LIST ───────────────────────────────────────
 const sentenceList = [
     {
-        "en": "It is common sense that people's inner beliefs may drive their external behavior.",
-        "ko": "사람들의 내면의 믿음이 외적인 행동을 이끌 수 있다는 것은 상식이다."
+        "en": "Science is concerned with accumulating and understanding observations of the physical world.",
+        "ko": "과학은 물리적 세계에 대한 관찰을 축적하고 이해하는 것과 관련되어 있다."
     },
     {
-        "en": "If you're attracted to a certain person, you should be more likely to socialize with that person.",
-        "ko": "특정한 사람에게 끌린다면, 당신은 그 사람과 어울릴 가능성이 더 높다."
+        "en": "That understanding alone solves no problems.",
+        "ko": "그 이해만으로는 아무 문제도 해결하지 못한다."
     },
     {
-        "en": "If you favor a brand of toothpaste, you're more likely to buy it.",
-        "ko": "어떤 치약 브랜드를 선호한다면, 당신은 그것을 살 가능성이 더 높다."
+        "en": "Individual people have to act on that understanding for it to help solve problems.",
+        "ko": "그 이해가 문제 해결에 도움이 되려면 개인들이 그것에 따라 행동해야 한다."
     },
     {
-        "en": "Our internal thoughts don't always predict our public behavior.",
-        "ko": "우리의 내적 생각이 항상 우리의 공적인 행동을 예측하는 것은 아니다."
+        "en": "For instance, science has found that regular exercise can lower your risk of heart disease.",
+        "ko": "예를 들어, 과학은 규칙적인 운동이 심장병의 위험을 낮출 수 있다는 것을 발견했다."
     },
     {
-        "en": "Overall, what we do obviously reflects what we think.",
-        "ko": "전반적으로, 우리가 하는 일은 우리가 생각하는 것을 명백히 반영한다."
+        "en": "Knowing this fact is interesting, but it will do nothing for your personal health unless you act on it and actually exercise.",
+        "ko": "이 사실을 아는 것은 흥미롭지만, 그것에 따라 행동하고 실제로 운동하지 않는 한 그것은 개인 건강에 아무 도움이 되지 않을 것이다."
     },
     {
-        "en": "Beliefs and behaviors are also related in a more remarkable way.",
-        "ko": "믿음과 행동은 또한 더 놀라운 방식으로 관련되어 있다."
+        "en": "And that's the hard part.",
+        "ko": "그리고 그것이 어려운 부분이다."
     },
     {
-        "en": "It turns out that the arrow is as likely to point in the reverse direction.",
-        "ko": "그 화살표가 반대 방향을 가리킬 가능성도 그만큼 있다는 것이 드러난다."
+        "en": "Reading an article about exercise is easy.",
+        "ko": "운동에 관한 글을 읽는 것은 쉽다."
     },
     {
-        "en": "We are likely not only to think ourselves into a way of acting but also to act ourselves into a way of thinking.",
-        "ko": "우리는 생각을 통해 행동 방식을 만들 뿐 아니라, 행동을 통해 사고방식을 만들 가능성도 있다."
+        "en": "Getting into an actual routine of regular exercise is harder.",
+        "ko": "규칙적인 운동의 실제 습관에 들어가는 것은 더 어렵다."
     },
     {
-        "en": "Imagine following the spirit of a silence vow into daily life.",
-        "ko": "침묵 서약의 정신을 일상생활 속에서 따르는 것을 상상해 보라."
+        "en": "In this sense, science really solves no problems at all.",
+        "ko": "이런 의미에서 과학은 실제로 전혀 문제를 해결하지 못한다."
     },
     {
-        "en": "Challenge yourself to spend an entire day saying only what you absolutely must say.",
-        "ko": "하루 종일 반드시 말해야 하는 것만 말하도록 스스로 도전해 보라."
+        "en": "Problems are only solved when people take the knowledge provided by science and use it.",
+        "ko": "문제는 사람들이 과학이 제공한 지식을 받아들이고 그것을 사용할 때에만 해결된다."
     },
     {
-        "en": "We too often tend to treat conversation as a game of waiting for our own turn to speak.",
-        "ko": "우리는 너무 자주 대화를 자기 차례를 기다리는 게임처럼 여기는 경향이 있다."
-    },
-    {
-        "en": "We miss what's being said because we're mentally rehearsing our next utterance.",
-        "ko": "우리는 다음 발언을 마음속으로 연습하고 있기 때문에 말해지고 있는 것을 놓친다."
-    },
-    {
-        "en": "What if you could eliminate the idea that the next available mini-silence is your next opening?",
-        "ko": "다음 짧은 침묵이 당신의 다음 발언 기회라는 생각을 없앨 수 있다면 어떨까?"
-    },
-    {
-        "en": "What if you were limited to fifty spoken words tomorrow?",
-        "ko": "내일 말할 수 있는 단어가 50개로 제한된다면 어떨까?"
-    },
-    {
-        "en": "You'd listen quite differently.",
-        "ko": "당신은 상당히 다르게 들을 것이다."
-    },
-    {
-        "en": "You'd attend quite carefully to every word you heard.",
-        "ko": "당신은 듣는 모든 말에 매우 주의 깊게 집중할 것이다."
-    },
-    {
-        "en": "You'd be attuned to what you must respond to.",
-        "ko": "당신은 반드시 응답해야 하는 것에 민감하게 맞춰질 것이다."
-    },
-    {
-        "en": "You might discover that the less you say, the more you hear.",
-        "ko": "말을 적게 할수록 더 많이 듣게 된다는 것을 발견할지도 모른다."
+        "en": "In fact, many of humanity's biggest problems are caused by lack of action, and not lack of knowledge.",
+        "ko": "사실 인류의 가장 큰 문제들 중 많은 것은 지식 부족이 아니라 행동 부족 때문에 생긴다."
     }
 ];
 
-// ── 3. ANALYSIS LIST ────────────────────────────────────────
-// pos 5종류만 사용: "명사(구/절)" | "대명사" | "형용사(구/절)" | "부사(구/절)" | "동사(구)"
-// role 5종류만 사용: "주어" | "서술어" | "목적어" | "보어" | "수식어"
+// ── 3. ANALYSIS LIST ───────────────────────────────────────
 const analysisList = [
     [
-        "사람들의 내면의 믿음이 외적인 행동을 이끌 수 있다는 것은 상식이다.",
+        "과학은 물리적 세계에 대한 관찰을 축적하고 이해하는 것과 관련되어 있다.",
         [
             [
-                "It",
-                "대명사",
+                "Science",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "is concerned",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "with accumulating and understanding observations of the physical world",
+                "부사(구/절)",
+                "수식어",
+                "✦ 전치사 with가 이끄는 전치사구 (부사구)\nbe concerned를 보충하며, with 뒤에는 동명사구 accumulating and understanding이 쓰였습니다."
+            ]
+        ]
+    ],
+    [
+        "그 이해만으로는 아무 문제도 해결하지 못한다.",
+        [
+            [
+                "That understanding alone",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "solves",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "no problems",
+                "명사(구/절)",
+                "목적어"
+            ]
+        ]
+    ],
+    [
+        "그 이해가 문제 해결에 도움이 되려면 개인들이 그것에 따라 행동해야 한다.",
+        [
+            [
+                "Individual people",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "have to act",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "on that understanding",
+                "부사(구/절)",
+                "수식어",
+                "✦ 전치사 on이 이끄는 전치사구 (부사구)\nact on은 '~에 따라 행동하다'라는 의미입니다."
+            ],
+            [
+                "for it to help solve problems",
+                "부사(구/절)",
+                "수식어",
+                "✦ for 의미상 주어 + to부정사구 (부사구 — 목적)\n'그것이 문제 해결을 돕기 위해'라는 의미로 앞 절을 수식합니다."
+            ]
+        ]
+    ],
+    [
+        "예를 들어, 과학은 규칙적인 운동이 심장병의 위험을 낮출 수 있다는 것을 발견했다.",
+        [
+            [
+                "For instance",
+                "부사(구/절)",
+                "수식어"
+            ],
+            [
+                "science",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "has found",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "that regular exercise can lower your risk of heart disease",
+                "명사(구/절)",
+                "목적어",
+                "✦ 접속사 that이 이끄는 명사절 (목적어)\nhas found의 목적어로 쓰였으며, 과학이 발견한 내용을 나타냅니다."
+            ]
+        ]
+    ],
+    [
+        "이 사실을 아는 것은 흥미롭지만, 그것은 개인 건강에 아무 도움이 되지 않을 것이다.",
+        [
+            [
+                "Knowing this fact",
+                "명사(구/절)",
                 "주어",
-                "⚠️ 가주어 It — 진짜 주어는 뒤의 that절입니다."
+                "✦ 동명사구 (명사구 — 명사적 용법, 주어)\n문장 전체의 주어 역할을 하며 단수 취급합니다."
             ],
             [
                 "is",
@@ -567,402 +619,207 @@ const analysisList = [
                 "서술어"
             ],
             [
-                "common sense",
-                "명사(구/절)",
+                "interesting",
+                "형용사(구/절)",
                 "보어"
             ],
             [
-                "that people's inner beliefs may drive their external behavior",
-                "명사(구/절)",
-                "주어",
-                "✦ 접속사 that이 이끄는 명사절 (명사절 — 진주어)\\n가주어 It에 대응하는 진짜 주어입니다."
-            ]
-        ]
-    ],
-    [
-        "특정한 사람에게 끌린다면, 그 사람과 어울릴 가능성이 더 높다.",
-        [
-            [
-                "If you're attracted to a certain person",
-                "부사(구/절)",
-                "수식어",
-                "✦ 접속사 if가 이끄는 부사절 (조건)\\n주절 전체를 수식합니다."
-            ],
-            [
-                "you",
+                "it",
                 "대명사",
                 "주어"
             ],
             [
-                "should be",
+                "will do",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "more likely",
-                "형용사(구/절)",
-                "보어"
-            ],
-            [
-                "to socialize with that person",
-                "부사(구/절)",
-                "수식어",
-                "✦ to부정사구 (부사구 — 부사적 용법)\\n형용사 likely의 내용을 보충하며 '~할 가능성이 있는' 의미를 만듭니다."
-            ]
-        ]
-    ],
-    [
-        "어떤 치약 브랜드를 선호한다면, 그것을 살 가능성이 더 높다.",
-        [
-            [
-                "If you favor a brand of toothpaste",
-                "부사(구/절)",
-                "수식어",
-                "✦ 접속사 if가 이끄는 부사절 (조건)\\n주절 전체를 수식합니다."
-            ],
-            [
-                "you're",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "more likely",
-                "형용사(구/절)",
-                "보어"
-            ],
-            [
-                "to buy it",
-                "부사(구/절)",
-                "수식어",
-                "✦ to부정사구 (부사구 — 부사적 용법)\\nlikely의 내용을 보충합니다."
-            ]
-        ]
-    ],
-    [
-        "우리의 내적 생각이 항상 우리의 공적인 행동을 예측하는 것은 아니다.",
-        [
-            [
-                "our internal thoughts",
+                "nothing",
                 "명사(구/절)",
+                "목적어"
+            ],
+            [
+                "for your personal health",
+                "부사(구/절)",
+                "수식어",
+                "✦ 전치사 for가 이끄는 전치사구 (부사구)\n무엇에 도움이 되지 않는지를 나타냅니다."
+            ]
+        ]
+    ],
+    [
+        "그것에 따라 행동하고 실제로 운동하지 않는 한, 그것은 도움이 되지 않는다.",
+        [
+            [
+                "unless you act on it and actually exercise",
+                "부사(구/절)",
+                "수식어",
+                "✦ 접속사 unless가 이끄는 부사절 (조건)\n'~하지 않는 한'의 의미로 주절 전체를 수식합니다."
+            ],
+            [
+                "it",
+                "대명사",
                 "주어"
             ],
             [
-                "don't always predict",
+                "will do",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "our public behavior",
+                "nothing",
                 "명사(구/절)",
                 "목적어"
             ]
         ]
     ],
     [
-        "우리가 하는 일은 우리가 생각하는 것을 명백히 반영한다.",
+        "그리고 그것이 어려운 부분이다.",
         [
             [
-                "what we do",
-                "명사(구/절)",
-                "주어",
-                "✦ 관계대명사 what이 이끄는 명사절 (주어)\\n'우리가 하는 것'이라는 뜻으로 문장의 주어입니다."
+                "that",
+                "대명사",
+                "주어"
             ],
             [
-                "obviously reflects",
+                "'s",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "what we think",
+                "the hard part",
                 "명사(구/절)",
-                "목적어",
-                "✦ 관계대명사 what이 이끄는 명사절 (목적어)\\nreflects의 목적어로 쓰였습니다."
+                "보어"
             ]
         ]
     ],
     [
-        "믿음과 행동은 또한 더 놀라운 방식으로 관련되어 있다.",
+        "운동에 관한 글을 읽는 것은 쉽다.",
         [
             [
-                "Beliefs and behaviors",
+                "Reading an article about exercise",
                 "명사(구/절)",
-                "주어"
+                "주어",
+                "✦ 동명사구 (명사구 — 명사적 용법, 주어)\nReading이 이끄는 동명사구가 문장 전체의 주어입니다."
             ],
             [
-                "are related",
+                "is",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "also",
+                "easy",
+                "형용사(구/절)",
+                "보어"
+            ]
+        ]
+    ],
+    [
+        "규칙적인 운동의 실제 습관에 들어가는 것은 더 어렵다.",
+        [
+            [
+                "Getting into an actual routine of regular exercise",
+                "명사(구/절)",
+                "주어",
+                "✦ 동명사구 (명사구 — 명사적 용법, 주어)\nGetting into가 이끄는 동명사구가 주어 역할을 합니다."
+            ],
+            [
+                "is",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "harder",
+                "형용사(구/절)",
+                "보어"
+            ]
+        ]
+    ],
+    [
+        "이런 의미에서 과학은 실제로 전혀 문제를 해결하지 못한다.",
+        [
+            [
+                "In this sense",
+                "부사(구/절)",
+                "수식어",
+                "✦ 전치사 in이 이끄는 전치사구 (부사구)\n문장 전체의 관점을 제시합니다."
+            ],
+            [
+                "science",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "really solves",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "no problems",
+                "명사(구/절)",
+                "목적어"
+            ],
+            [
+                "at all",
+                "부사(구/절)",
+                "수식어"
+            ]
+        ]
+    ],
+    [
+        "문제는 사람들이 과학이 제공한 지식을 받아들이고 그것을 사용할 때에만 해결된다.",
+        [
+            [
+                "Problems",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "are only solved",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "when people take the knowledge provided by science and use it",
+                "부사(구/절)",
+                "수식어",
+                "✦ 접속사 when이 이끄는 부사절 (시간/조건)\n문제가 해결되는 조건을 나타내며 주절 전체를 수식합니다."
+            ],
+            [
+                "provided by science",
+                "형용사(구/절)",
+                "수식어",
+                "✦ 과거분사구 (형용사구 — 후치수식)\n앞의 명사 the knowledge를 수식합니다."
+            ]
+        ]
+    ],
+    [
+        "사실 인류의 가장 큰 문제들 중 많은 것은 지식 부족이 아니라 행동 부족 때문에 생긴다.",
+        [
+            [
+                "In fact",
                 "부사(구/절)",
                 "수식어"
             ],
             [
-                "in a more remarkable way",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 in이 이끄는 전치사구 (부사구)\\n관련되는 방식을 나타냅니다."
-            ]
-        ]
-    ],
-    [
-        "화살표가 반대 방향을 가리킬 가능성도 그만큼 있다는 것이 드러난다.",
-        [
-            [
-                "It",
-                "대명사",
-                "주어",
-                "⚠️ 가주어 It — 진짜 주어는 뒤의 that절입니다."
-            ],
-            [
-                "turns out",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "that the arrow is as likely to point in the reverse direction",
+                "many of humanity's biggest problems",
                 "명사(구/절)",
-                "주어",
-                "✦ 접속사 that이 이끄는 명사절 (진주어)\\nIt turns out에 대응하는 실제 주어입니다."
-            ]
-        ]
-    ],
-    [
-        "우리는 생각을 통해 행동 방식을 만들 뿐 아니라 행동을 통해 사고방식도 만들 가능성이 있다.",
-        [
-            [
-                "we",
-                "대명사",
                 "주어"
             ],
             [
-                "are likely",
+                "are caused",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "not only to think ourselves into a way of acting but also to act ourselves into a way of thinking",
+                "by lack of action",
                 "부사(구/절)",
                 "수식어",
-                "✦ not only A but also B 구조의 to부정사 병렬 (부사구)\\nlikely의 구체적 내용을 설명합니다."
-            ]
-        ]
-    ],
-    [
-        "침묵 서약의 정신을 일상생활 속에서 따르는 것을 상상해 보라.",
-        [
-            [
-                "Imagine",
-                "동사(구)",
-                "서술어"
+                "✦ 전치사 by가 이끄는 전치사구 (부사구)\n수동태 are caused의 원인을 나타냅니다."
             ],
             [
-                "following the spirit of a silence vow into daily life",
+                "not lack of knowledge",
                 "명사(구/절)",
-                "목적어",
-                "✦ 동명사구 (명사구 — 명사적 용법, 목적어)\\nImagine의 목적어로 쓰였습니다."
-            ]
-        ]
-    ],
-    [
-        "하루 종일 반드시 말해야 하는 것만 말하도록 스스로 도전해 보라.",
-        [
-            [
-                "Challenge",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "yourself",
-                "대명사",
-                "목적어"
-            ],
-            [
-                "to spend an entire day saying only what you absolutely must say",
-                "부사(구/절)",
-                "수식어",
-                "✦ to부정사구 (부사구 — 부사적 용법)\\n어떤 방향으로 스스로 도전하는지 설명합니다."
-            ]
-        ]
-    ],
-    [
-        "우리는 대화를 자기 차례를 기다리는 게임처럼 여기는 경향이 있다.",
-        [
-            [
-                "we",
-                "대명사",
-                "주어"
-            ],
-            [
-                "too often tend to treat",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "conversation",
-                "명사(구/절)",
-                "목적어"
-            ],
-            [
-                "as a game of waiting for our own turn to speak",
-                "명사(구/절)",
-                "보어",
-                "✦ 전치사 as가 이끄는 보어 역할 구문\\ntreat A as B 구조에서 B가 목적격 보어처럼 쓰입니다."
-            ]
-        ]
-    ],
-    [
-        "우리는 다음 발언을 마음속으로 연습하고 있기 때문에 말해지고 있는 것을 놓친다.",
-        [
-            [
-                "We",
-                "대명사",
-                "주어"
-            ],
-            [
-                "miss",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "what's being said",
-                "명사(구/절)",
-                "목적어",
-                "✦ 관계대명사 what이 이끄는 명사절 (목적어)\\n'말해지고 있는 것'이라는 뜻입니다."
-            ],
-            [
-                "because we're mentally rehearsing our next utterance",
-                "부사(구/절)",
-                "수식어",
-                "✦ 접속사 because가 이끄는 부사절 (이유)\\n놓치는 이유를 설명합니다."
-            ]
-        ]
-    ],
-    [
-        "다음 짧은 침묵이 당신의 다음 기회라는 생각을 없앨 수 있다면 어떨까?",
-        [
-            [
-                "What if",
-                "부사(구/절)",
-                "수식어",
-                "✦ 의문 표현 What if (가정)\\n'~라면 어떨까?'의 의미로 가정을 나타냅니다."
-            ],
-            [
-                "you",
-                "대명사",
-                "주어"
-            ],
-            [
-                "could eliminate",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "the idea",
-                "명사(구/절)",
-                "목적어"
-            ],
-            [
-                "that the next available mini-silence is your next opening",
-                "형용사(구/절)",
-                "수식어",
-                "✦ 접속사 that이 이끄는 동격절 (형용사절 성격)\\n앞의 명사 the idea의 내용을 설명합니다."
-            ]
-        ]
-    ],
-    [
-        "내일 말할 수 있는 단어가 50개로 제한된다면 어떨까?",
-        [
-            [
-                "What if",
-                "부사(구/절)",
-                "수식어",
-                "✦ 의문 표현 What if (가정)\\n가정 상황을 제시합니다."
-            ],
-            [
-                "you",
-                "대명사",
-                "주어"
-            ],
-            [
-                "were limited",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "to fifty spoken words tomorrow",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 to가 이끄는 전치사구 (부사구)\\n제한의 범위를 나타냅니다."
-            ]
-        ]
-    ],
-    [
-        "당신은 듣는 모든 말에 매우 주의 깊게 집중할 것이다.",
-        [
-            [
-                "You",
-                "대명사",
-                "주어"
-            ],
-            [
-                "would attend",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "quite carefully",
-                "부사(구/절)",
-                "수식어"
-            ],
-            [
-                "to every word you heard",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 to가 이끄는 전치사구 (부사구)\\nattend to의 대상이 되는 말을 나타냅니다."
-            ]
-        ]
-    ],
-    [
-        "반드시 응답해야 하는 것에 민감하게 맞춰질 것이다.",
-        [
-            [
-                "You",
-                "대명사",
-                "주어"
-            ],
-            [
-                "would be attuned",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "to what you must respond to",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 to + what 명사절 (부사구)\\n무엇에 맞춰지는지를 나타냅니다."
-            ]
-        ]
-    ],
-    [
-        "말을 적게 할수록 더 많이 듣게 된다는 것을 발견할지도 모른다.",
-        [
-            [
-                "You",
-                "대명사",
-                "주어"
-            ],
-            [
-                "might discover",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "that the less you say, the more you hear",
-                "명사(구/절)",
-                "목적어",
-                "✦ 접속사 that이 이끄는 명사절 (목적어)\\ndiscover의 목적어이며 'the 비교급, the 비교급' 구조를 포함합니다."
+                "보어"
             ]
         ]
     ]
@@ -1083,14 +940,130 @@ function showSection(id, btn) {
 }
 
 function saveHist(key, data) {
-    let arr=JSON.parse(localStorage.getItem('sr2122_'+key)||'[]');
+    let arr=JSON.parse(localStorage.getItem('sr23_'+key)||'[]');
     data.date=new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit'});
     arr.unshift(data); if(arr.length>10) arr=arr.slice(0,10);
-    localStorage.setItem('sr2122_'+key,JSON.stringify(arr));
+    localStorage.setItem('sr23_'+key,JSON.stringify(arr));
 }
 function saveWrong(w) {
-    let arr=JSON.parse(localStorage.getItem('sr2122_wrong')||'[]');
-    if(!arr.find(x=>x.en===w.en)) { arr.push(w); localStorage.setItem('sr2122_wrong',JSON.stringify(arr)); }
+    let arr=JSON.parse(localStorage.getItem('sr23_wrong')||'[]');
+    if(!arr.find(x=>x.en===w.en)) { arr.push(w); localStorage.setItem('sr23_wrong',JSON.stringify(arr)); }
+}
+
+
+// ============================================================
+// 0. PROBLEM READING + GRADING
+// ============================================================
+let selectedMainAnswer = null;
+const mainAnswer = 5;
+const mainLineExplanations = [
+    {
+        en: "Science is concerned with accumulating and understanding observations of the physical world.",
+        ko: "과학은 물리적 세계에 대한 관찰을 축적하고 이해하는 것과 관련이 있다.",
+        gram: "be concerned with ~: '~와 관련이 있다'. accumulating and understanding은 전치사 with의 목적어로 쓰인 동명사 병렬 구조입니다. observations of the physical world는 '물리적 세계의 관찰 내용'입니다."
+    },
+    {
+        en: "That understanding alone solves no problems.",
+        ko: "그 이해만으로는 어떤 문제도 해결하지 못한다.",
+        gram: "alone은 '혼자서, 그것만으로'라는 강조 부사입니다. no problems는 '어떤 문제도 ~ 아니다'라는 강한 부정 표현입니다."
+    },
+    {
+        en: "Individual people have to act on that understanding for it to help solve problems.",
+        ko: "그 이해가 문제 해결에 도움이 되려면, 개개인이 그 이해를 바탕으로 행동해야 한다.",
+        gram: "have to는 의무 '~해야 한다'. act on은 '~에 따라 행동하다'. for it to help solve problems는 의미상 주어 it을 가진 to부정사구로 목적을 나타냅니다."
+    },
+    {
+        en: "For instance, science has found that regular exercise can lower your risk of heart disease.",
+        ko: "예를 들어, 과학은 규칙적인 운동이 심장병의 위험을 낮출 수 있다는 것을 밝혀냈다.",
+        gram: "For instance는 예시 연결어입니다. has found는 현재완료. that절은 found의 목적어 역할을 하는 명사절입니다. lower your risk는 '위험을 낮추다'라는 중요 표현입니다."
+    },
+    {
+        en: "Knowing this fact is interesting, but it will do nothing for your personal health unless you act on it and actually exercise.",
+        ko: "이 사실을 아는 것은 흥미롭지만, 그것을 바탕으로 행동하고 실제로 운동하지 않는다면 개인 건강에는 아무런 도움이 되지 않을 것이다.",
+        gram: "Knowing this fact는 동명사구 주어입니다. unless는 '만약 ~하지 않는다면'의 조건 접속사입니다. act on it and actually exercise는 병렬 동사 구조입니다."
+    },
+    {
+        en: "And that’s the hard part.",
+        ko: "그리고 그것이 어려운 부분이다.",
+        gram: "that은 앞문장의 '알고 있는 것을 실제 행동으로 옮기는 것'을 가리킵니다. 글의 핵심 전환점입니다."
+    },
+    {
+        en: "Reading an article about exercise is easy.",
+        ko: "운동에 관한 글을 읽는 것은 쉽다.",
+        gram: "Reading an article about exercise는 동명사구 주어입니다. about exercise는 article을 수식하는 전치사구입니다."
+    },
+    {
+        en: "Getting into an actual routine of regular exercise is harder.",
+        ko: "규칙적인 운동의 실제 루틴에 들어가는 것은 더 어렵다.",
+        gram: "Getting into는 '~에 들어가다, 시작하다'. an actual routine of regular exercise는 '규칙적인 운동의 실제 루틴'입니다. 앞문장과 easy/harder가 대조됩니다."
+    },
+    {
+        en: "In this sense, science really solves no problems at all.",
+        ko: "이런 의미에서, 과학은 실제로 어떤 문제도 전혀 해결하지 못한다.",
+        gram: "In this sense는 '이런 의미에서'. no ~ at all은 '전혀 ~ 아니다'라는 강한 부정입니다. 과학 지식 자체보다 행동이 중요하다는 주장입니다."
+    },
+    {
+        en: "Problems are only solved when people take the knowledge provided by science and use it.",
+        ko: "문제는 사람들이 과학이 제공한 지식을 받아들이고 그것을 사용할 때에만 해결된다.",
+        gram: "are solved는 수동태입니다. when절은 시간/조건의 부사절입니다. provided by science는 과거분사구로 the knowledge를 수식합니다. take A and use it의 병렬 구조도 중요합니다."
+    },
+    {
+        en: "In fact, many of humanity’s biggest problems are caused by lack of action, and not lack of knowledge.",
+        ko: "사실, 인류의 가장 큰 문제들 중 많은 것은 지식의 부족이 아니라 행동의 부족 때문에 발생한다.",
+        gram: "are caused by는 '~에 의해 야기되다'. lack of action과 lack of knowledge가 대조됩니다. not A but B의 의미 구조로, 글의 결론이자 정답 근거입니다."
+    }
+];
+
+function selectMainChoice(btn) {
+    selectedMainAnswer = Number(btn.dataset.n);
+    document.querySelectorAll('.q-choice').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+}
+
+function checkMainProblem() {
+    initAudio();
+    if (!selectedMainAnswer) {
+        alert('먼저 정답을 선택하세요.');
+        return;
+    }
+    const result = document.getElementById('main-result');
+    const choices = document.querySelectorAll('.q-choice');
+    choices.forEach(b => {
+        b.classList.remove('correct','wrong');
+        const n = Number(b.dataset.n);
+        if (n === mainAnswer) b.classList.add('correct');
+        if (n === selectedMainAnswer && n !== mainAnswer) b.classList.add('wrong');
+    });
+    const ok = selectedMainAnswer === mainAnswer;
+    showCombo(ok);
+    if (ok) {
+        sfxOK();
+        result.className = 'result-box correct';
+        result.innerHTML = '<b>정답입니다! ⑤</b><br>이 글은 과학적 이해 자체가 아니라, 그 이해를 실제 행동으로 옮겨야 문제가 해결된다는 내용을 말합니다.';
+        confetti({particleCount:90,spread:65,origin:{y:.72},colors:['#1a5c9a','#f5a623','#27ae60']});
+    } else {
+        sfxNG();
+        result.className = 'result-box wrong';
+        result.innerHTML = '<b>아쉽습니다. 정답은 ⑤입니다.</b><br>핵심은 “지식 부족”이 아니라 “행동 부족”입니다. 과학 지식을 실제로 사용해야 문제가 해결된다는 주제입니다.';
+    }
+    renderLineExplain();
+    saveHist('problem',{score: ok ? 100 : 0, correct: ok ? 1 : 0, total: 1});
+}
+
+function renderLineExplain() {
+    const wrap = document.getElementById('line-explain');
+    let html = '<div class="question-box">📌 한 줄씩 해석 · 문법사항 · 구문상황 · 중요표현</div>';
+    mainLineExplanations.forEach((x, i) => {
+        html += `<div class="explain-card">
+            <div class="ex-en"><span class="pill">${i+1}</span>${x.en}</div>
+            <div class="ex-ko">${x.ko}</div>
+            <div class="ex-gram">🔎 ${x.gram}</div>
+        </div>`;
+    });
+    html += '<div class="question-box"><b>전체 요지</b><br>과학적 지식은 중요하지만, 문제를 실제로 해결하는 것은 그 지식을 바탕으로 한 행동입니다. 따라서 정답은 ⑤ need to act on scientific understanding in solving problems입니다.</div>';
+    wrap.innerHTML = html;
+    wrap.classList.add('show');
+    wrap.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 // ============================================================
@@ -1223,9 +1196,9 @@ function jumpTo() {
     else alert(`1~${sentenceList.length} 사이 번호를 입력하세요.`);
 }
 function recDict() {
-    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('sr2122_dict')||'{}');
+    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('sr23_dict')||'{}');
     if(!h[dk]) h[dk]={count:0}; h[dk].count++;
-    localStorage.setItem('sr2122_dict',JSON.stringify(h));
+    localStorage.setItem('sr23_dict',JSON.stringify(h));
 }
 
 // ============================================================
@@ -1368,9 +1341,9 @@ function finishAnal(early=false){
 }
 function resetAnal(){ document.getElementById('anal-result').style.display='none'; document.getElementById('anal-intro').style.display='block'; }
 function recAnal(){
-    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('sr2122_anal')||'{}');
+    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('sr23_anal')||'{}');
     if(!h[dk]) h[dk]={count:0}; h[dk].count++;
-    localStorage.setItem('sr2122_anal',JSON.stringify(h));
+    localStorage.setItem('sr23_anal',JSON.stringify(h));
 }
 
 // ============================================================
@@ -1379,14 +1352,14 @@ function recAnal(){
 function renderHistory(){
     const div=document.getElementById('hist-list'); div.innerHTML='';
     div.insertAdjacentHTML('beforeend','<div class="hist-category">📝 단어 테스트 성적</div>');
-    const wh=JSON.parse(localStorage.getItem('sr2122_word')||'[]');
+    const wh=JSON.parse(localStorage.getItem('sr23_word')||'[]');
     if(!wh.length) div.insertAdjacentHTML('beforeend','<p style="color:#a0aec0;font-size:13px">기록 없음</p>');
     else wh.slice(0,3).forEach(r=>{
         const st=r.score>=90?'<span class="stamp">마스터 🐉</span>':'';
         div.insertAdjacentHTML('beforeend',`<div class="hist-card"><div><div class="hist-date">${r.date}</div><div class="hist-score">${r.score}점 <span style="font-size:12px;color:#a0aec0">(${r.correct}/${r.total})</span></div></div>${st}</div>`);
     });
     div.insertAdjacentHTML('beforeend','<div class="hist-category">🎧 영작 달성도</div>');
-    const dh=JSON.parse(localStorage.getItem('sr2122_dict')||'{}');
+    const dh=JSON.parse(localStorage.getItem('sr23_dict')||'{}');
     const dks=Object.keys(dh).sort((a,b)=>new Date(b)-new Date(a));
     if(!dks.length) div.insertAdjacentHTML('beforeend','<p style="color:#a0aec0;font-size:13px">기록 없음</p>');
     else dks.slice(0,3).forEach(k=>{
@@ -1394,7 +1367,7 @@ function renderHistory(){
         div.insertAdjacentHTML('beforeend',`<div class="hist-card"><div><div class="hist-date">${fmtKey(k)}</div><div class="hist-score">${dh[k].count}문장 성공</div></div>${st}</div>`);
     });
     div.insertAdjacentHTML('beforeend','<div class="hist-category">🧩 문장 분석 달성도</div>');
-    const ah=JSON.parse(localStorage.getItem('sr2122_anal')||'{}');
+    const ah=JSON.parse(localStorage.getItem('sr23_anal')||'{}');
     const aks=Object.keys(ah).sort((a,b)=>new Date(b)-new Date(a));
     if(!aks.length) div.insertAdjacentHTML('beforeend','<p style="color:#a0aec0;font-size:13px">기록 없음</p>');
     else aks.slice(0,3).forEach(k=>{
@@ -1408,7 +1381,7 @@ function renderHistory(){
 // ============================================================
 function renderReview(){
     const div=document.getElementById('rev-list'); div.innerHTML='';
-    const arr=JSON.parse(localStorage.getItem('sr2122_wrong')||'[]');
+    const arr=JSON.parse(localStorage.getItem('sr23_wrong')||'[]');
     if(!arr.length){
         div.innerHTML='<div style="padding:16px;text-align:center;color:var(--green);font-weight:800;background:#f0fff4;border-radius:10px">🎉 오답이 없습니다! 완벽해요!</div>';
         return;
@@ -1422,11 +1395,11 @@ function renderReview(){
     });
 }
 function delWrong(i){
-    let arr=JSON.parse(localStorage.getItem('sr2122_wrong')||'[]');
-    arr.splice(i,1); localStorage.setItem('sr2122_wrong',JSON.stringify(arr)); renderReview();
+    let arr=JSON.parse(localStorage.getItem('sr23_wrong')||'[]');
+    arr.splice(i,1); localStorage.setItem('sr23_wrong',JSON.stringify(arr)); renderReview();
 }
 function clearWrong(){
-    if(confirm('오답 도감을 전부 비울까요?')){ localStorage.removeItem('sr2122_wrong'); renderReview(); }
+    if(confirm('오답 도감을 전부 비울까요?')){ localStorage.removeItem('sr23_wrong'); renderReview(); }
 }
 </script>
 </body>
