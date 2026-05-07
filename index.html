@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수리나무학원 - 23 Science & Action</title>
+    <title>수리나무학원 - 24 Interpretation of Reality</title>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
@@ -165,8 +165,8 @@
 <div id="app">
     <div id="combo"></div>
     <div class="header">
-        <div class="header-badge">고1 영어 · 23번</div>
-        <h1>🔬 Science & Action Practice</h1>
+        <div class="header-badge">고1 영어 · 24번</div>
+        <h1>🌍 Interpretation of Reality</h1>
         <p>수리나무학원 스마트 영어 학습 · iPhone 음성 최적화</p>
     </div>
 
@@ -182,20 +182,20 @@
     <!-- ===== 0. PROBLEM ===== -->
     <div id="problem-sec" class="section active">
         <div class="problem-card">
-            <div class="problem-title">23. 다음 글의 주제로 가장 적절한 것은?</div>
+            <div class="problem-title">24. 다음 글의 제목으로 가장 적절한 것은?</div>
             <div class="problem-passage">
-                Science is concerned with accumulating and understanding observations of the physical world. That understanding alone solves no problems. Individual people have to act on that understanding for it to help solve problems. For instance, science has found that regular exercise can lower your risk of heart disease. Knowing this fact is interesting, but it will do nothing for your personal health unless you act on it and actually exercise. And that’s the hard part. Reading an article about exercise is easy. Getting into an actual routine of regular exercise is harder. In this sense, science really solves no problems at all. Problems are only solved when people take the knowledge provided by science and use it. In fact, many of humanity’s biggest problems are caused by lack of action, and not lack of knowledge.
+                We think we’re being logical, objective, and rational — and therefore accurate in our analysis, judgment, and decisions. So we think that if other people are logical, objective, and rational, they will agree with us and see what we see. But the opposite is the case. Every human brain is different. Everyone’s life experience is different. Everyone’s desires and knowledge are different. You might think you’re being realistic — that is, that your ideas match reality, but that’s impossible. It’s only your interpretation of reality, which will always be different from someone else’s. When two nations play each other in the World Cup, the fans of each country criticize the referees for missing all the infractions that the other team commits. Without fail, each fan base believes that the referees are biased against their team.
             </div>
-            <div class="problem-vocab">* accumulate: 축적하다</div>
+            <div class="problem-vocab">* infraction: 위반</div>
         </div>
 
         <div class="question-box">정답을 고른 뒤 채점하면, 바로 아래에 한 줄씩 해석·문법·구문·중요표현 정리가 나옵니다.</div>
         <div class="choice-list" id="main-choices">
-            <button class="q-choice" data-n="1" onclick="selectMainChoice(this)">① advantages of putting strategic plans into action</button>
-            <button class="q-choice" data-n="2" onclick="selectMainChoice(this)">② danger of acting against the wisdom of the crowd</button>
-            <button class="q-choice" data-n="3" onclick="selectMainChoice(this)">③ difficulty in sharing scientific knowledge with the public</button>
-            <button class="q-choice" data-n="4" onclick="selectMainChoice(this)">④ problems with lacking specific knowledge about exercising</button>
-            <button class="q-choice" data-n="5" onclick="selectMainChoice(this)">⑤ need to act on scientific understanding in solving problems</button>
+            <button class="q-choice" data-n="1" onclick="selectMainChoice(this)">① Open to Interpretation: Everyone Sees Reality Differently</button>
+            <button class="q-choice" data-n="2" onclick="selectMainChoice(this)">② Efforts Made to Fill the Gap Between Real and Ideal</button>
+            <button class="q-choice" data-n="3" onclick="selectMainChoice(this)">③ One Single Reality: What We All Agree Upon</button>
+            <button class="q-choice" data-n="4" onclick="selectMainChoice(this)">④ Why Sports Fans Judge Their Team’s Play Objectively</button>
+            <button class="q-choice" data-n="5" onclick="selectMainChoice(this)">⑤ Knowledge: The Key to Interpreting the World Accurately</button>
         </div>
         <button class="primary-btn" onclick="checkMainProblem()">정답 확인하고 해설 보기 ✅</button>
         <div id="main-result" class="result-box"></div>
@@ -319,299 +319,346 @@
 // ── 1. WORD LIST ───────────────────────────────────────────
 const wordList = [
     {
-        "en": "science",
-        "ko": "과학"
+        "en": "logical",
+        "ko": "논리적인"
     },
     {
-        "en": "be concerned with",
-        "ko": "~에 관련되다, ~에 관심을 가지다"
+        "en": "objective",
+        "ko": "객관적인"
     },
     {
-        "en": "accumulate",
-        "ko": "축적하다"
+        "en": "rational",
+        "ko": "합리적인"
     },
     {
-        "en": "understanding",
-        "ko": "이해, 이해하는 것"
+        "en": "accurate",
+        "ko": "정확한"
     },
     {
-        "en": "observation",
-        "ko": "관찰"
+        "en": "analysis",
+        "ko": "분석"
     },
     {
-        "en": "physical world",
-        "ko": "물리적 세계, 현실 세계"
+        "en": "judgment",
+        "ko": "판단"
     },
     {
-        "en": "alone",
-        "ko": "혼자서, 단독으로"
+        "en": "decision",
+        "ko": "결정"
     },
     {
-        "en": "solve",
-        "ko": "해결하다"
+        "en": "therefore",
+        "ko": "그러므로, 따라서"
     },
     {
-        "en": "problem",
-        "ko": "문제"
+        "en": "agree with",
+        "ko": "~에 동의하다"
     },
     {
-        "en": "individual",
-        "ko": "개개의, 개인의"
+        "en": "see what we see",
+        "ko": "우리가 보는 것을 보다, 우리와 같은 관점으로 보다"
     },
     {
-        "en": "act on",
-        "ko": "~에 따라 행동하다, 실행하다"
+        "en": "opposite",
+        "ko": "반대, 정반대"
     },
     {
-        "en": "for instance",
-        "ko": "예를 들어"
+        "en": "case",
+        "ko": "사실, 경우"
     },
     {
-        "en": "regular exercise",
-        "ko": "규칙적인 운동"
+        "en": "human brain",
+        "ko": "인간의 뇌"
     },
     {
-        "en": "lower",
-        "ko": "낮추다"
+        "en": "life experience",
+        "ko": "삶의 경험"
     },
     {
-        "en": "risk",
-        "ko": "위험, 위험성"
+        "en": "desire",
+        "ko": "욕구, 바람"
     },
     {
-        "en": "heart disease",
-        "ko": "심장병"
+        "en": "knowledge",
+        "ko": "지식"
     },
     {
-        "en": "fact",
-        "ko": "사실"
+        "en": "realistic",
+        "ko": "현실적인"
     },
     {
-        "en": "personal health",
-        "ko": "개인의 건강"
+        "en": "reality",
+        "ko": "현실"
     },
     {
-        "en": "unless",
-        "ko": "~하지 않는 한"
+        "en": "match",
+        "ko": "일치하다"
     },
     {
-        "en": "actually",
-        "ko": "실제로"
+        "en": "impossible",
+        "ko": "불가능한"
     },
     {
-        "en": "hard part",
-        "ko": "어려운 부분"
+        "en": "interpretation",
+        "ko": "해석"
     },
     {
-        "en": "article",
-        "ko": "글, 기사"
+        "en": "different from",
+        "ko": "~와 다른"
     },
     {
-        "en": "actual",
-        "ko": "실제의"
+        "en": "nation",
+        "ko": "국가"
     },
     {
-        "en": "routine",
-        "ko": "일상적 습관, 규칙적 절차"
+        "en": "World Cup",
+        "ko": "월드컵"
     },
     {
-        "en": "in this sense",
-        "ko": "이런 의미에서"
+        "en": "fan",
+        "ko": "팬, 지지자"
     },
     {
-        "en": "at all",
-        "ko": "전혀, 조금도"
+        "en": "criticize",
+        "ko": "비판하다"
     },
     {
-        "en": "be solved",
-        "ko": "해결되다"
+        "en": "referee",
+        "ko": "심판"
     },
     {
-        "en": "take knowledge",
-        "ko": "지식을 받아들이다, 지식을 활용하다"
+        "en": "miss",
+        "ko": "놓치다, 못 보다"
     },
     {
-        "en": "provided by science",
-        "ko": "과학에 의해 제공된"
+        "en": "infraction",
+        "ko": "위반"
     },
     {
-        "en": "humanity",
-        "ko": "인류"
+        "en": "commit",
+        "ko": "저지르다, 범하다"
     },
     {
-        "en": "be caused by",
-        "ko": "~에 의해 야기되다"
+        "en": "without fail",
+        "ko": "틀림없이, 반드시"
     },
     {
-        "en": "lack of action",
-        "ko": "행동의 부족"
+        "en": "fan base",
+        "ko": "팬층, 팬 집단"
     },
     {
-        "en": "lack of knowledge",
-        "ko": "지식의 부족"
+        "en": "believe",
+        "ko": "믿다"
     },
     {
-        "en": "put into action",
-        "ko": "실행에 옮기다"
+        "en": "biased",
+        "ko": "편향된, 편견을 가진"
     },
     {
-        "en": "scientific understanding",
-        "ko": "과학적 이해"
+        "en": "against",
+        "ko": "~에 반대하여, ~에게 불리하게"
+    },
+    {
+        "en": "interpret",
+        "ko": "해석하다"
+    },
+    {
+        "en": "life",
+        "ko": "삶, 인생"
+    },
+    {
+        "en": "accurate in",
+        "ko": "~에서 정확한"
+    },
+    {
+        "en": "without",
+        "ko": "~ 없이"
+    },
+    {
+        "en": "each other",
+        "ko": "서로"
     }
 ];
 
 // ── 2. SENTENCE LIST ───────────────────────────────────────
 const sentenceList = [
     {
-        "en": "Science is concerned with accumulating and understanding observations of the physical world.",
-        "ko": "과학은 물리적 세계에 대한 관찰을 축적하고 이해하는 것과 관련되어 있다."
+        "en": "We think we're being logical, objective, and rational.",
+        "ko": "우리는 자신이 논리적이고 객관적이며 합리적이라고 생각한다."
     },
     {
-        "en": "That understanding alone solves no problems.",
-        "ko": "그 이해만으로는 아무 문제도 해결하지 못한다."
+        "en": "We think we're accurate in our analysis, judgment, and decisions.",
+        "ko": "우리는 자신의 분석, 판단, 결정이 정확하다고 생각한다."
     },
     {
-        "en": "Individual people have to act on that understanding for it to help solve problems.",
-        "ko": "그 이해가 문제 해결에 도움이 되려면 개인들이 그것에 따라 행동해야 한다."
+        "en": "If other people are logical, objective, and rational, they will agree with us.",
+        "ko": "다른 사람들이 논리적이고 객관적이며 합리적이라면, 그들은 우리에게 동의할 것이다."
     },
     {
-        "en": "For instance, science has found that regular exercise can lower your risk of heart disease.",
-        "ko": "예를 들어, 과학은 규칙적인 운동이 심장병의 위험을 낮출 수 있다는 것을 발견했다."
+        "en": "But the opposite is the case.",
+        "ko": "하지만 사실은 그 반대이다."
     },
     {
-        "en": "Knowing this fact is interesting, but it will do nothing for your personal health unless you act on it and actually exercise.",
-        "ko": "이 사실을 아는 것은 흥미롭지만, 그것에 따라 행동하고 실제로 운동하지 않는 한 그것은 개인 건강에 아무 도움이 되지 않을 것이다."
+        "en": "Every human brain is different.",
+        "ko": "모든 인간의 뇌는 다르다."
     },
     {
-        "en": "And that's the hard part.",
-        "ko": "그리고 그것이 어려운 부분이다."
+        "en": "Everyone's life experience is different.",
+        "ko": "모든 사람의 삶의 경험은 다르다."
     },
     {
-        "en": "Reading an article about exercise is easy.",
-        "ko": "운동에 관한 글을 읽는 것은 쉽다."
+        "en": "Everyone's desires and knowledge are different.",
+        "ko": "모든 사람의 욕구와 지식은 다르다."
     },
     {
-        "en": "Getting into an actual routine of regular exercise is harder.",
-        "ko": "규칙적인 운동의 실제 습관에 들어가는 것은 더 어렵다."
+        "en": "You might think you're being realistic.",
+        "ko": "너는 자신이 현실적이라고 생각할지도 모른다."
     },
     {
-        "en": "In this sense, science really solves no problems at all.",
-        "ko": "이런 의미에서 과학은 실제로 전혀 문제를 해결하지 못한다."
+        "en": "Your ideas match reality, but that's impossible.",
+        "ko": "너의 생각이 현실과 일치한다고 생각할 수 있지만, 그것은 불가능하다."
     },
     {
-        "en": "Problems are only solved when people take the knowledge provided by science and use it.",
-        "ko": "문제는 사람들이 과학이 제공한 지식을 받아들이고 그것을 사용할 때에만 해결된다."
+        "en": "It's only your interpretation of reality.",
+        "ko": "그것은 단지 현실에 대한 너의 해석일 뿐이다."
     },
     {
-        "en": "In fact, many of humanity's biggest problems are caused by lack of action, and not lack of knowledge.",
-        "ko": "사실 인류의 가장 큰 문제들 중 많은 것은 지식 부족이 아니라 행동 부족 때문에 생긴다."
+        "en": "Your interpretation will always be different from someone else's.",
+        "ko": "너의 해석은 항상 다른 사람의 해석과 다를 것이다."
+    },
+    {
+        "en": "When two nations play each other in the World Cup, the fans criticize the referees.",
+        "ko": "두 국가가 월드컵에서 서로 경기할 때, 팬들은 심판들을 비판한다."
+    },
+    {
+        "en": "The fans criticize the referees for missing all the infractions.",
+        "ko": "팬들은 모든 위반을 놓쳤다고 심판들을 비판한다."
+    },
+    {
+        "en": "Each fan base believes that the referees are biased against their team.",
+        "ko": "각 팬층은 심판들이 자기 팀에게 불리하게 편향되어 있다고 믿는다."
     }
 ];
 
 // ── 3. ANALYSIS LIST ───────────────────────────────────────
 const analysisList = [
     [
-        "과학은 물리적 세계에 대한 관찰을 축적하고 이해하는 것과 관련되어 있다.",
+        "우리는 자신이 논리적이고 객관적이며 합리적이라고 생각한다.",
         [
             [
-                "Science",
-                "명사(구/절)",
+                "We",
+                "대명사",
                 "주어"
             ],
             [
-                "is concerned",
+                "think",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "with accumulating and understanding observations of the physical world",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 with가 이끄는 전치사구 (부사구)\nbe concerned를 보충하며, with 뒤에는 동명사구 accumulating and understanding이 쓰였습니다."
+                "we're being logical, objective, and rational",
+                "명사(구/절)",
+                "목적어",
+                "✦ 접속사 that이 생략된 명사절 (목적어)\nthink의 목적어 역할을 하며, '우리가 ~하고 있다고'의 내용입니다."
+            ],
+            [
+                "logical, objective, and rational",
+                "형용사(구/절)",
+                "보어"
             ]
         ]
     ],
     [
-        "그 이해만으로는 아무 문제도 해결하지 못한다.",
+        "우리는 자신의 분석, 판단, 결정이 정확하다고 생각한다.",
         [
             [
-                "That understanding alone",
-                "명사(구/절)",
+                "We",
+                "대명사",
                 "주어"
             ],
             [
-                "solves",
+                "think",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "no problems",
+                "we're accurate in our analysis, judgment, and decisions",
                 "명사(구/절)",
+                "목적어",
+                "✦ 접속사 that이 생략된 명사절 (목적어)\nthink의 목적어로 쓰인 내용절입니다."
+            ],
+            [
+                "accurate",
+                "형용사(구/절)",
+                "보어"
+            ],
+            [
+                "in our analysis, judgment, and decisions",
+                "부사(구/절)",
+                "수식어",
+                "✦ 전치사 in이 이끄는 전치사구 (부사구)\n형용사 accurate가 적용되는 영역을 나타냅니다."
+            ]
+        ]
+    ],
+    [
+        "다른 사람들이 논리적이고 객관적이며 합리적이라면, 그들은 우리에게 동의할 것이다.",
+        [
+            [
+                "If other people are logical, objective, and rational",
+                "부사(구/절)",
+                "수식어",
+                "✦ 접속사 if가 이끄는 부사절 (조건)\n주절 they will agree with us가 일어날 조건을 나타냅니다."
+            ],
+            [
+                "they",
+                "대명사",
+                "주어"
+            ],
+            [
+                "will agree with",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "us",
+                "대명사",
                 "목적어"
             ]
         ]
     ],
     [
-        "그 이해가 문제 해결에 도움이 되려면 개인들이 그것에 따라 행동해야 한다.",
+        "그리고 그들은 우리가 보는 것을 보게 될 것이다.",
         [
             [
-                "Individual people",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "have to act",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "on that understanding",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 on이 이끄는 전치사구 (부사구)\nact on은 '~에 따라 행동하다'라는 의미입니다."
-            ],
-            [
-                "for it to help solve problems",
-                "부사(구/절)",
-                "수식어",
-                "✦ for 의미상 주어 + to부정사구 (부사구 — 목적)\n'그것이 문제 해결을 돕기 위해'라는 의미로 앞 절을 수식합니다."
-            ]
-        ]
-    ],
-    [
-        "예를 들어, 과학은 규칙적인 운동이 심장병의 위험을 낮출 수 있다는 것을 발견했다.",
-        [
-            [
-                "For instance",
+                "and",
                 "부사(구/절)",
                 "수식어"
             ],
             [
-                "science",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "has found",
+                "see",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "that regular exercise can lower your risk of heart disease",
+                "what we see",
                 "명사(구/절)",
                 "목적어",
-                "✦ 접속사 that이 이끄는 명사절 (목적어)\nhas found의 목적어로 쓰였으며, 과학이 발견한 내용을 나타냅니다."
+                "✦ 관계대명사 what이 이끄는 명사절 (목적어)\n'우리가 보는 것'이라는 의미로 see의 목적어입니다."
             ]
         ]
     ],
     [
-        "이 사실을 아는 것은 흥미롭지만, 그것은 개인 건강에 아무 도움이 되지 않을 것이다.",
+        "하지만 사실은 그 반대이다.",
         [
             [
-                "Knowing this fact",
+                "But",
+                "부사(구/절)",
+                "수식어"
+            ],
+            [
+                "the opposite",
                 "명사(구/절)",
-                "주어",
-                "✦ 동명사구 (명사구 — 명사적 용법, 주어)\n문장 전체의 주어 역할을 하며 단수 취급합니다."
+                "주어"
             ],
             [
                 "is",
@@ -619,64 +666,134 @@ const analysisList = [
                 "서술어"
             ],
             [
-                "interesting",
+                "the case",
+                "명사(구/절)",
+                "보어"
+            ]
+        ]
+    ],
+    [
+        "모든 인간의 뇌는 다르다.",
+        [
+            [
+                "Every human brain",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "is",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "different",
                 "형용사(구/절)",
                 "보어"
-            ],
-            [
-                "it",
-                "대명사",
-                "주어"
-            ],
-            [
-                "will do",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "nothing",
-                "명사(구/절)",
-                "목적어"
-            ],
-            [
-                "for your personal health",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 for가 이끄는 전치사구 (부사구)\n무엇에 도움이 되지 않는지를 나타냅니다."
             ]
         ]
     ],
     [
-        "그것에 따라 행동하고 실제로 운동하지 않는 한, 그것은 도움이 되지 않는다.",
+        "모든 사람의 삶의 경험은 다르다.",
         [
             [
-                "unless you act on it and actually exercise",
-                "부사(구/절)",
-                "수식어",
-                "✦ 접속사 unless가 이끄는 부사절 (조건)\n'~하지 않는 한'의 의미로 주절 전체를 수식합니다."
-            ],
-            [
-                "it",
-                "대명사",
+                "Everyone's life experience",
+                "명사(구/절)",
                 "주어"
             ],
             [
-                "will do",
+                "is",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "nothing",
-                "명사(구/절)",
-                "목적어"
+                "different",
+                "형용사(구/절)",
+                "보어"
             ]
         ]
     ],
     [
-        "그리고 그것이 어려운 부분이다.",
+        "모든 사람의 욕구와 지식은 다르다.",
         [
             [
-                "that",
+                "Everyone's desires and knowledge",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "are",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "different",
+                "형용사(구/절)",
+                "보어"
+            ]
+        ]
+    ],
+    [
+        "너는 자신이 현실적이라고 생각할지도 모른다.",
+        [
+            [
+                "You",
+                "대명사",
+                "주어"
+            ],
+            [
+                "might think",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "you're being realistic",
+                "명사(구/절)",
+                "목적어",
+                "✦ 접속사 that이 생략된 명사절 (목적어)\n'might think'의 목적어로 쓰인 내용절입니다."
+            ],
+            [
+                "realistic",
+                "형용사(구/절)",
+                "보어"
+            ]
+        ]
+    ],
+    [
+        "즉, 너의 생각이 현실과 일치한다고 생각할 수 있지만, 그것은 불가능하다.",
+        [
+            [
+                "that is",
+                "부사(구/절)",
+                "수식어"
+            ],
+            [
+                "your ideas",
+                "명사(구/절)",
+                "주어"
+            ],
+            [
+                "match",
+                "동사(구)",
+                "서술어"
+            ],
+            [
+                "reality",
+                "명사(구/절)",
+                "목적어"
+            ],
+            [
+                "but that's impossible",
+                "부사(구/절)",
+                "수식어",
+                "✦ 등위접속사 but이 이끄는 대조 구조\n앞의 생각과 달리 그것이 불가능하다는 반대 내용을 연결합니다."
+            ]
+        ]
+    ],
+    [
+        "그것은 단지 현실에 대한 너의 해석일 뿐이며, 그것은 항상 다른 사람의 해석과 다를 것이다.",
+        [
+            [
+                "It",
                 "대명사",
                 "주어"
             ],
@@ -686,140 +803,91 @@ const analysisList = [
                 "서술어"
             ],
             [
-                "the hard part",
+                "only your interpretation of reality",
                 "명사(구/절)",
                 "보어"
-            ]
-        ]
-    ],
-    [
-        "운동에 관한 글을 읽는 것은 쉽다.",
-        [
-            [
-                "Reading an article about exercise",
-                "명사(구/절)",
-                "주어",
-                "✦ 동명사구 (명사구 — 명사적 용법, 주어)\nReading이 이끄는 동명사구가 문장 전체의 주어입니다."
             ],
             [
-                "is",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "easy",
+                "of reality",
                 "형용사(구/절)",
-                "보어"
-            ]
-        ]
-    ],
-    [
-        "규칙적인 운동의 실제 습관에 들어가는 것은 더 어렵다.",
-        [
-            [
-                "Getting into an actual routine of regular exercise",
-                "명사(구/절)",
-                "주어",
-                "✦ 동명사구 (명사구 — 명사적 용법, 주어)\nGetting into가 이끄는 동명사구가 주어 역할을 합니다."
+                "수식어",
+                "✦ 전치사 of가 이끄는 전치사구 (형용사구)\n앞의 명사 interpretation을 수식합니다."
             ],
             [
-                "is",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "harder",
+                "which will always be different from someone else's",
                 "형용사(구/절)",
-                "보어"
+                "수식어",
+                "✦ 관계대명사 which가 이끄는 관계사절 (형용사절)\n앞의 interpretation of reality를 추가 설명합니다."
             ]
         ]
     ],
     [
-        "이런 의미에서 과학은 실제로 전혀 문제를 해결하지 못한다.",
+        "두 국가가 월드컵에서 서로 경기할 때, 각 나라의 팬들은 심판들을 비판한다.",
         [
             [
-                "In this sense",
+                "When two nations play each other in the World Cup",
                 "부사(구/절)",
                 "수식어",
-                "✦ 전치사 in이 이끄는 전치사구 (부사구)\n문장 전체의 관점을 제시합니다."
+                "✦ 접속사 when이 이끄는 부사절 (시간)\n주절의 상황이 언제 일어나는지 나타냅니다."
             ],
             [
-                "science",
+                "the fans of each country",
                 "명사(구/절)",
                 "주어"
             ],
             [
-                "really solves",
+                "criticize",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "no problems",
+                "the referees",
                 "명사(구/절)",
                 "목적어"
-            ],
-            [
-                "at all",
-                "부사(구/절)",
-                "수식어"
             ]
         ]
     ],
     [
-        "문제는 사람들이 과학이 제공한 지식을 받아들이고 그것을 사용할 때에만 해결된다.",
+        "팬들은 상대 팀이 저지르는 모든 위반을 심판들이 놓쳤다고 비판한다.",
         [
             [
-                "Problems",
-                "명사(구/절)",
-                "주어"
-            ],
-            [
-                "are only solved",
-                "동사(구)",
-                "서술어"
-            ],
-            [
-                "when people take the knowledge provided by science and use it",
+                "for missing all the infractions",
                 "부사(구/절)",
                 "수식어",
-                "✦ 접속사 when이 이끄는 부사절 (시간/조건)\n문제가 해결되는 조건을 나타내며 주절 전체를 수식합니다."
+                "✦ 전치사 for가 이끄는 전치사구 (부사구)\ncriticize의 이유를 나타냅니다. missing은 전치사 for의 목적어인 동명사입니다."
             ],
             [
-                "provided by science",
+                "that the other team commits",
                 "형용사(구/절)",
                 "수식어",
-                "✦ 과거분사구 (형용사구 — 후치수식)\n앞의 명사 the knowledge를 수식합니다."
+                "✦ 관계대명사 that이 이끄는 관계사절 (형용사절)\n앞의 명사 infractions를 수식합니다."
             ]
         ]
     ],
     [
-        "사실 인류의 가장 큰 문제들 중 많은 것은 지식 부족이 아니라 행동 부족 때문에 생긴다.",
+        "틀림없이 각 팬층은 심판들이 자기 팀에게 불리하게 편향되어 있다고 믿는다.",
         [
             [
-                "In fact",
+                "Without fail",
                 "부사(구/절)",
-                "수식어"
+                "수식어",
+                "✦ 전치사 without이 이끄는 전치사구 (부사구)\n'틀림없이, 반드시'라는 관용 표현으로 문장 전체를 수식합니다."
             ],
             [
-                "many of humanity's biggest problems",
+                "each fan base",
                 "명사(구/절)",
                 "주어"
             ],
             [
-                "are caused",
+                "believes",
                 "동사(구)",
                 "서술어"
             ],
             [
-                "by lack of action",
-                "부사(구/절)",
-                "수식어",
-                "✦ 전치사 by가 이끄는 전치사구 (부사구)\n수동태 are caused의 원인을 나타냅니다."
-            ],
-            [
-                "not lack of knowledge",
+                "that the referees are biased against their team",
                 "명사(구/절)",
-                "보어"
+                "목적어",
+                "✦ 접속사 that이 이끄는 명사절 (목적어)\nbelieves의 목적어로 쓰인 내용절입니다."
             ]
         ]
     ]
@@ -940,14 +1008,14 @@ function showSection(id, btn) {
 }
 
 function saveHist(key, data) {
-    let arr=JSON.parse(localStorage.getItem('sr23_'+key)||'[]');
+    let arr=JSON.parse(localStorage.getItem('sr24_'+key)||'[]');
     data.date=new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit'});
     arr.unshift(data); if(arr.length>10) arr=arr.slice(0,10);
-    localStorage.setItem('sr23_'+key,JSON.stringify(arr));
+    localStorage.setItem('sr24_'+key,JSON.stringify(arr));
 }
 function saveWrong(w) {
-    let arr=JSON.parse(localStorage.getItem('sr23_wrong')||'[]');
-    if(!arr.find(x=>x.en===w.en)) { arr.push(w); localStorage.setItem('sr23_wrong',JSON.stringify(arr)); }
+    let arr=JSON.parse(localStorage.getItem('sr24_wrong')||'[]');
+    if(!arr.find(x=>x.en===w.en)) { arr.push(w); localStorage.setItem('sr24_wrong',JSON.stringify(arr)); }
 }
 
 
@@ -955,62 +1023,57 @@ function saveWrong(w) {
 // 0. PROBLEM READING + GRADING
 // ============================================================
 let selectedMainAnswer = null;
-const mainAnswer = 5;
+const mainAnswer = 1;
 const mainLineExplanations = [
     {
-        en: "Science is concerned with accumulating and understanding observations of the physical world.",
-        ko: "과학은 물리적 세계에 대한 관찰을 축적하고 이해하는 것과 관련이 있다.",
-        gram: "be concerned with ~: '~와 관련이 있다'. accumulating and understanding은 전치사 with의 목적어로 쓰인 동명사 병렬 구조입니다. observations of the physical world는 '물리적 세계의 관찰 내용'입니다."
+        "en": "We think we're being logical, objective, and rational — and therefore accurate in our analysis, judgment, and decisions.",
+        "ko": "우리는 자신이 논리적이고 객관적이며 합리적이고, 따라서 자신의 분석과 판단과 결정에서 정확하다고 생각한다.",
+        "gram": "being logical, objective, and rational은 be동사의 진행형처럼 보이지만 상태를 강조합니다. therefore는 '따라서'로 앞의 세 형용사와 accurate를 연결합니다. accurate in ~은 '~에서 정확한'이라는 표현입니다."
     },
     {
-        en: "That understanding alone solves no problems.",
-        ko: "그 이해만으로는 어떤 문제도 해결하지 못한다.",
-        gram: "alone은 '혼자서, 그것만으로'라는 강조 부사입니다. no problems는 '어떤 문제도 ~ 아니다'라는 강한 부정 표현입니다."
+        "en": "So we think that if other people are logical, objective, and rational, they will agree with us and see what we see.",
+        "ko": "그래서 우리는 다른 사람들이 논리적이고 객관적이며 합리적이라면, 그들이 우리에게 동의하고 우리가 보는 것을 볼 것이라고 생각한다.",
+        "gram": "think that절 안에 if 조건절이 들어간 구조입니다. what we see는 '우리가 보는 것'이라는 명사절로 see의 목적어입니다. agree with는 '~에 동의하다'입니다."
     },
     {
-        en: "Individual people have to act on that understanding for it to help solve problems.",
-        ko: "그 이해가 문제 해결에 도움이 되려면, 개개인이 그 이해를 바탕으로 행동해야 한다.",
-        gram: "have to는 의무 '~해야 한다'. act on은 '~에 따라 행동하다'. for it to help solve problems는 의미상 주어 it을 가진 to부정사구로 목적을 나타냅니다."
+        "en": "But the opposite is the case.",
+        "ko": "하지만 사실은 그 반대이다.",
+        "gram": "the opposite은 앞 내용 전체의 반대 상황을 가리킵니다. is the case는 '사실이다, 실정이다'라는 표현입니다. 글의 방향이 전환되는 핵심 문장입니다."
     },
     {
-        en: "For instance, science has found that regular exercise can lower your risk of heart disease.",
-        ko: "예를 들어, 과학은 규칙적인 운동이 심장병의 위험을 낮출 수 있다는 것을 밝혀냈다.",
-        gram: "For instance는 예시 연결어입니다. has found는 현재완료. that절은 found의 목적어 역할을 하는 명사절입니다. lower your risk는 '위험을 낮추다'라는 중요 표현입니다."
+        "en": "Every human brain is different.",
+        "ko": "모든 인간의 뇌는 다르다.",
+        "gram": "Every는 단수 명사를 수식하므로 brain이 단수이고 동사도 is가 쓰였습니다. 사람들이 서로 다르게 현실을 해석하는 첫 번째 근거입니다."
     },
     {
-        en: "Knowing this fact is interesting, but it will do nothing for your personal health unless you act on it and actually exercise.",
-        ko: "이 사실을 아는 것은 흥미롭지만, 그것을 바탕으로 행동하고 실제로 운동하지 않는다면 개인 건강에는 아무런 도움이 되지 않을 것이다.",
-        gram: "Knowing this fact는 동명사구 주어입니다. unless는 '만약 ~하지 않는다면'의 조건 접속사입니다. act on it and actually exercise는 병렬 동사 구조입니다."
+        "en": "Everyone's life experience is different.",
+        "ko": "모든 사람의 삶의 경험은 다르다.",
+        "gram": "Everyone's는 '모든 사람의'라는 소유격입니다. life experience는 '삶의 경험'이라는 핵심 표현입니다."
     },
     {
-        en: "And that’s the hard part.",
-        ko: "그리고 그것이 어려운 부분이다.",
-        gram: "that은 앞문장의 '알고 있는 것을 실제 행동으로 옮기는 것'을 가리킵니다. 글의 핵심 전환점입니다."
+        "en": "Everyone's desires and knowledge are different.",
+        "ko": "모든 사람의 욕구와 지식은 다르다.",
+        "gram": "desires and knowledge가 병렬 주어라서 동사는 are가 쓰였습니다. brain, experience, desires/knowledge가 반복되어 차이의 근거를 쌓습니다."
     },
     {
-        en: "Reading an article about exercise is easy.",
-        ko: "운동에 관한 글을 읽는 것은 쉽다.",
-        gram: "Reading an article about exercise는 동명사구 주어입니다. about exercise는 article을 수식하는 전치사구입니다."
+        "en": "You might think you're being realistic — that is, that your ideas match reality, but that's impossible.",
+        "ko": "너는 자신이 현실적이라고, 즉 너의 생각이 현실과 일치한다고 생각할지도 모르지만, 그것은 불가능하다.",
+        "gram": "might think 뒤에는 that이 생략된 명사절이 이어집니다. that is는 '즉'이라는 삽입 표현입니다. match reality는 '현실과 일치하다'이고 but that's impossible이 필자의 반박입니다."
     },
     {
-        en: "Getting into an actual routine of regular exercise is harder.",
-        ko: "규칙적인 운동의 실제 루틴에 들어가는 것은 더 어렵다.",
-        gram: "Getting into는 '~에 들어가다, 시작하다'. an actual routine of regular exercise는 '규칙적인 운동의 실제 루틴'입니다. 앞문장과 easy/harder가 대조됩니다."
+        "en": "It's only your interpretation of reality, which will always be different from someone else's.",
+        "ko": "그것은 단지 현실에 대한 너의 해석일 뿐이며, 그것은 항상 다른 사람의 해석과 다를 것이다.",
+        "gram": "only는 '단지 ~일 뿐'이라는 제한의 의미입니다. which 관계사절은 앞의 interpretation of reality를 추가 설명합니다. different from은 '~와 다른'입니다."
     },
     {
-        en: "In this sense, science really solves no problems at all.",
-        ko: "이런 의미에서, 과학은 실제로 어떤 문제도 전혀 해결하지 못한다.",
-        gram: "In this sense는 '이런 의미에서'. no ~ at all은 '전혀 ~ 아니다'라는 강한 부정입니다. 과학 지식 자체보다 행동이 중요하다는 주장입니다."
+        "en": "When two nations play each other in the World Cup, the fans of each country criticize the referees for missing all the infractions that the other team commits.",
+        "ko": "두 국가가 월드컵에서 서로 경기할 때, 각 나라의 팬들은 상대 팀이 저지르는 모든 위반을 심판들이 놓쳤다고 비판한다.",
+        "gram": "When절은 시간의 부사절입니다. criticize A for B는 'B 때문에 A를 비판하다'입니다. missing은 전치사 for의 목적어인 동명사이고, that the other team commits는 infractions를 수식하는 관계사절입니다."
     },
     {
-        en: "Problems are only solved when people take the knowledge provided by science and use it.",
-        ko: "문제는 사람들이 과학이 제공한 지식을 받아들이고 그것을 사용할 때에만 해결된다.",
-        gram: "are solved는 수동태입니다. when절은 시간/조건의 부사절입니다. provided by science는 과거분사구로 the knowledge를 수식합니다. take A and use it의 병렬 구조도 중요합니다."
-    },
-    {
-        en: "In fact, many of humanity’s biggest problems are caused by lack of action, and not lack of knowledge.",
-        ko: "사실, 인류의 가장 큰 문제들 중 많은 것은 지식의 부족이 아니라 행동의 부족 때문에 발생한다.",
-        gram: "are caused by는 '~에 의해 야기되다'. lack of action과 lack of knowledge가 대조됩니다. not A but B의 의미 구조로, 글의 결론이자 정답 근거입니다."
+        "en": "Without fail, each fan base believes that the referees are biased against their team.",
+        "ko": "틀림없이 각 팬층은 심판들이 자기 팀에게 불리하게 편향되어 있다고 믿는다.",
+        "gram": "Without fail은 '틀림없이'라는 중요 표현입니다. believes that절은 목적어 명사절입니다. be biased against는 '~에게 불리하게 편향되어 있다'라는 표현입니다."
     }
 ];
 
@@ -1039,12 +1102,12 @@ function checkMainProblem() {
     if (ok) {
         sfxOK();
         result.className = 'result-box correct';
-        result.innerHTML = '<b>정답입니다! ⑤</b><br>이 글은 과학적 이해 자체가 아니라, 그 이해를 실제 행동으로 옮겨야 문제가 해결된다는 내용을 말합니다.';
+        result.innerHTML = '<b>정답입니다! ①</b><br>이 글은 사람마다 뇌, 경험, 욕구, 지식이 다르기 때문에 현실을 각자 다르게 해석한다는 내용을 말합니다.';
         confetti({particleCount:90,spread:65,origin:{y:.72},colors:['#1a5c9a','#f5a623','#27ae60']});
     } else {
         sfxNG();
         result.className = 'result-box wrong';
-        result.innerHTML = '<b>아쉽습니다. 정답은 ⑤입니다.</b><br>핵심은 “지식 부족”이 아니라 “행동 부족”입니다. 과학 지식을 실제로 사용해야 문제가 해결된다는 주제입니다.';
+        result.innerHTML = '<b>아쉽습니다. 정답은 ①입니다.</b><br>핵심은 현실 그 자체가 하나로 똑같이 보이는 것이 아니라, 각자의 경험과 관점에 따라 다르게 해석된다는 점입니다.';
     }
     renderLineExplain();
     saveHist('problem',{score: ok ? 100 : 0, correct: ok ? 1 : 0, total: 1});
@@ -1060,7 +1123,7 @@ function renderLineExplain() {
             <div class="ex-gram">🔎 ${x.gram}</div>
         </div>`;
     });
-    html += '<div class="question-box"><b>전체 요지</b><br>과학적 지식은 중요하지만, 문제를 실제로 해결하는 것은 그 지식을 바탕으로 한 행동입니다. 따라서 정답은 ⑤ need to act on scientific understanding in solving problems입니다.</div>';
+    html += '<div class="question-box"><b>전체 요지</b><br>사람들은 자신이 현실을 객관적으로 본다고 생각하지만, 실제로는 각자의 뇌·경험·욕구·지식이 달라 현실을 서로 다르게 해석합니다. 따라서 정답은 ① Open to Interpretation: Everyone Sees Reality Differently입니다.</div>';
     wrap.innerHTML = html;
     wrap.classList.add('show');
     wrap.scrollIntoView({behavior:'smooth', block:'start'});
@@ -1196,9 +1259,9 @@ function jumpTo() {
     else alert(`1~${sentenceList.length} 사이 번호를 입력하세요.`);
 }
 function recDict() {
-    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('sr23_dict')||'{}');
+    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('sr24_dict')||'{}');
     if(!h[dk]) h[dk]={count:0}; h[dk].count++;
-    localStorage.setItem('sr23_dict',JSON.stringify(h));
+    localStorage.setItem('sr24_dict',JSON.stringify(h));
 }
 
 // ============================================================
@@ -1341,9 +1404,9 @@ function finishAnal(early=false){
 }
 function resetAnal(){ document.getElementById('anal-result').style.display='none'; document.getElementById('anal-intro').style.display='block'; }
 function recAnal(){
-    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('sr23_anal')||'{}');
+    const dk=todayKey(); let h=JSON.parse(localStorage.getItem('sr24_anal')||'{}');
     if(!h[dk]) h[dk]={count:0}; h[dk].count++;
-    localStorage.setItem('sr23_anal',JSON.stringify(h));
+    localStorage.setItem('sr24_anal',JSON.stringify(h));
 }
 
 // ============================================================
@@ -1352,14 +1415,14 @@ function recAnal(){
 function renderHistory(){
     const div=document.getElementById('hist-list'); div.innerHTML='';
     div.insertAdjacentHTML('beforeend','<div class="hist-category">📝 단어 테스트 성적</div>');
-    const wh=JSON.parse(localStorage.getItem('sr23_word')||'[]');
+    const wh=JSON.parse(localStorage.getItem('sr24_word')||'[]');
     if(!wh.length) div.insertAdjacentHTML('beforeend','<p style="color:#a0aec0;font-size:13px">기록 없음</p>');
     else wh.slice(0,3).forEach(r=>{
         const st=r.score>=90?'<span class="stamp">마스터 🐉</span>':'';
         div.insertAdjacentHTML('beforeend',`<div class="hist-card"><div><div class="hist-date">${r.date}</div><div class="hist-score">${r.score}점 <span style="font-size:12px;color:#a0aec0">(${r.correct}/${r.total})</span></div></div>${st}</div>`);
     });
     div.insertAdjacentHTML('beforeend','<div class="hist-category">🎧 영작 달성도</div>');
-    const dh=JSON.parse(localStorage.getItem('sr23_dict')||'{}');
+    const dh=JSON.parse(localStorage.getItem('sr24_dict')||'{}');
     const dks=Object.keys(dh).sort((a,b)=>new Date(b)-new Date(a));
     if(!dks.length) div.insertAdjacentHTML('beforeend','<p style="color:#a0aec0;font-size:13px">기록 없음</p>');
     else dks.slice(0,3).forEach(k=>{
@@ -1367,7 +1430,7 @@ function renderHistory(){
         div.insertAdjacentHTML('beforeend',`<div class="hist-card"><div><div class="hist-date">${fmtKey(k)}</div><div class="hist-score">${dh[k].count}문장 성공</div></div>${st}</div>`);
     });
     div.insertAdjacentHTML('beforeend','<div class="hist-category">🧩 문장 분석 달성도</div>');
-    const ah=JSON.parse(localStorage.getItem('sr23_anal')||'{}');
+    const ah=JSON.parse(localStorage.getItem('sr24_anal')||'{}');
     const aks=Object.keys(ah).sort((a,b)=>new Date(b)-new Date(a));
     if(!aks.length) div.insertAdjacentHTML('beforeend','<p style="color:#a0aec0;font-size:13px">기록 없음</p>');
     else aks.slice(0,3).forEach(k=>{
@@ -1381,7 +1444,7 @@ function renderHistory(){
 // ============================================================
 function renderReview(){
     const div=document.getElementById('rev-list'); div.innerHTML='';
-    const arr=JSON.parse(localStorage.getItem('sr23_wrong')||'[]');
+    const arr=JSON.parse(localStorage.getItem('sr24_wrong')||'[]');
     if(!arr.length){
         div.innerHTML='<div style="padding:16px;text-align:center;color:var(--green);font-weight:800;background:#f0fff4;border-radius:10px">🎉 오답이 없습니다! 완벽해요!</div>';
         return;
@@ -1395,11 +1458,11 @@ function renderReview(){
     });
 }
 function delWrong(i){
-    let arr=JSON.parse(localStorage.getItem('sr23_wrong')||'[]');
-    arr.splice(i,1); localStorage.setItem('sr23_wrong',JSON.stringify(arr)); renderReview();
+    let arr=JSON.parse(localStorage.getItem('sr24_wrong')||'[]');
+    arr.splice(i,1); localStorage.setItem('sr24_wrong',JSON.stringify(arr)); renderReview();
 }
 function clearWrong(){
-    if(confirm('오답 도감을 전부 비울까요?')){ localStorage.removeItem('sr23_wrong'); renderReview(); }
+    if(confirm('오답 도감을 전부 비울까요?')){ localStorage.removeItem('sr24_wrong'); renderReview(); }
 }
 </script>
 </body>
