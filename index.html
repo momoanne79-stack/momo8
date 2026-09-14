@@ -257,7 +257,8 @@
         icon:'🥛', title:'Does Warm Milk Help?', label:'2번 대화문 · 따뜻한 우유',
         lines:[
           {id:'d2l1',speaker:'W',text:"I usually drink a glass of warm milk before I go to bed, but it doesn't help me fall asleep.",ko:'나는 보통 잠자리에 들기 전에 따뜻한 우유 한 잔을 마시지만, 그것은 내가 잠드는 데 도움이 되지 않아.'},
-          {id:'d2l2',speaker:'M',text:"I saw a show on TV, and a doctor said that a glass of warm milk doesn't actually help you fall asleep.",ko:'나는 TV에서 한 프로그램을 봤는데, 의사가 따뜻한 우유 한 잔이 실제로 잠드는 데 도움이 되지는 않는다고 말했어.'}
+          {id:'d2l2',speaker:'M',text:"I saw a show on TV, and a doctor said that a glass of warm milk doesn't actually help you fall asleep.",ko:'나는 TV에서 한 프로그램을 봤는데, 의사가 따뜻한 우유 한 잔이 실제로 잠드는 데 도움이 되지는 않는다고 말했어.'},
+          {id:'d2l3',speaker:'W',text:"Oh, it doesn't? Can you tell me more about it?",ko:'아, 도움이 안 된다고? 그것에 대해 좀 더 말해 줄래?'}
         ]
       },
       {
@@ -271,6 +272,7 @@
         ]
       }
     ];
+    const TOTAL_SENTENCES = DIALOGUES.reduce((sum,dialogue)=>sum+dialogue.lines.length,0);
 
     let selectedEnglishVoice = null;
     let selectedKoreanVoice = null;
@@ -347,11 +349,11 @@
       const first=DIALOGUES[0].lines[0];
       return `
         <section class="panel sleep-panel ${activeView==='sleep'?'active':''}" data-panel="sleep">
-          <div class="guide"><span class="guide-icon">🌙</span><span><b>밤새 듣기 순서</b><br>11문장을 모두 들은 뒤 자동으로 처음부터 다시 시작합니다. 정지 버튼을 누르기 전까지 계속 반복됩니다.</span></div>
+          <div class="guide"><span class="guide-icon">🌙</span><span><b>밤새 듣기 순서</b><br>${TOTAL_SENTENCES}문장을 모두 들은 뒤 자동으로 처음부터 다시 시작합니다. 정지 버튼을 누르기 전까지 계속 반복됩니다.</span></div>
           <article class="card sleep-card">
             <div class="card-head">
               <div><div class="eyebrow">1~3번 대화문 전체</div><h2>밤새 무한 반복</h2></div>
-              <span class="count">총 11문장</span>
+              <span class="count">총 ${TOTAL_SENTENCES}문장</span>
             </div>
             <div class="sleep-order"><b>🇰🇷 한글 뜻<br>1회</b><span class="sleep-arrow">›</span><b>🇺🇸 영어<br>1회</b><span class="sleep-arrow">›</span><b>🇺🇸 영어<br>2회</b></div>
             <div class="voice-picker">
@@ -360,7 +362,7 @@
               <div class="voice-name" data-ko-voice-name>기기에서 가장 자연스러운 한국어 음성을 찾는 중입니다.</div>
             </div>
             <div class="sleep-now">
-              <div class="sleep-meta">시작 전 · 1번 대화문 · 1/11문장</div>
+              <div class="sleep-meta">시작 전 · 1번 대화문 · 1/${TOTAL_SENTENCES}문장</div>
               <div class="sleep-stage">재생 준비</div>
               <div class="sleep-ko">${esc(first.ko)}</div>
               <div class="sleep-en">${esc(first.text)}</div>
@@ -593,7 +595,7 @@
       if(!panel)return;
       const before=DIALOGUES.slice(0,item.di).reduce((sum,d)=>sum+d.lines.length,0);
       const number=before+item.li+1;
-      panel.querySelector('.sleep-meta').textContent=`${sleepCycle}번째 순환 · ${dialogue.label} · ${number}/11문장`;
+      panel.querySelector('.sleep-meta').textContent=`${sleepCycle}번째 순환 · ${dialogue.label} · ${number}/${TOTAL_SENTENCES}문장`;
       panel.querySelector('.sleep-stage').textContent=item.lang==='ko-KR'?'🇰🇷 한글 뜻 1회':'🇺🇸 영어 '+item.pass+'/2회';
       panel.querySelector('.sleep-ko').textContent=line.ko;
       panel.querySelector('.sleep-en').textContent=line.text;
