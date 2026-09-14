@@ -51,8 +51,8 @@
       top:0;
       z-index:10;
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:7px;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:5px;
       padding:10px;
       background:rgba(255,255,255,.96);
       border-bottom:1px solid #e5eef6;
@@ -60,7 +60,7 @@
     }
     .tab{
       min-height:48px;
-      padding:8px 5px;
+      padding:8px 3px;
       border:2px solid #d9e7f3;
       border-radius:13px;
       background:#f5f8fb;
@@ -173,6 +173,49 @@
     .memorize .sentence{color:transparent;text-shadow:0 0 11px rgba(19,34,56,.45);user-select:none}
     .memorize .line:focus-within .sentence,.memorize .line:hover .sentence{color:var(--ink);text-shadow:none}
     .tip{margin:12px 3px 0;text-align:center;color:#77889a;font-size:11px;line-height:1.55;font-weight:800}
+    .sleep-order{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:5px;margin:12px 0;padding:10px;border-radius:14px;background:#f2f8fe;color:var(--navy);font-size:11px;font-weight:1000;text-align:center}
+    .sleep-order b{display:grid;place-items:center;min-height:44px;padding:5px;border:1.5px solid #c9e1f5;border-radius:10px;background:#fff;line-height:1.3}
+    .sleep-arrow{color:var(--orange);font-size:17px}
+    .voice-picker{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:end;margin:10px 0;padding:10px;border:1.5px solid #d5e7f6;border-radius:13px;background:#f8fbff}
+    .voice-picker label{display:block;margin-bottom:5px;color:var(--navy);font-size:11px;font-weight:1000}
+    .voice-select{width:100%;height:43px;padding:0 10px;border:1.5px solid #bcd7ed;border-radius:10px;background:#fff;color:#263d55;font-size:12px;font-weight:850}
+    .voice-preview{height:43px;padding:0 12px;border:0;border-radius:10px;background:#e4f2ff;color:var(--blue);font-size:12px;font-weight:1000;cursor:pointer;white-space:nowrap}
+    .voice-name{grid-column:1/-1;color:#64778c;font-size:10px;line-height:1.4;font-weight:800}
+    .sleep-now{min-height:225px;padding:17px 15px;margin:12px 0;border:2px solid #c6def2;border-radius:17px;background:linear-gradient(145deg,#f8fcff,#eaf5ff);text-align:center;display:flex;flex-direction:column;justify-content:center}
+    .sleep-meta{color:var(--blue);font-size:11px;font-weight:1000;line-height:1.45}
+    .sleep-stage{display:inline-block;align-self:center;margin:9px 0;padding:7px 11px;border-radius:999px;background:var(--blue);color:#fff;font-size:12px;font-weight:1000}
+    .sleep-ko{color:#4e6176;font-size:14px;line-height:1.55;font-weight:900}
+    .sleep-en{margin-top:8px;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:clamp(18px,5vw,23px);line-height:1.48;font-weight:700}
+    .sleep-controls{display:grid;grid-template-columns:1.45fr 1fr;gap:8px;margin-top:11px}
+    .sleep-start,.sleep-stop,.dark-btn{min-height:48px;border:0;border-radius:13px;font-size:13px;font-weight:1000;cursor:pointer}
+    .sleep-start{color:#fff;background:linear-gradient(135deg,#255fa0,#133e68);box-shadow:0 6px 15px rgba(26,92,154,.23)}
+    .sleep-start.active{background:var(--green)}
+    .sleep-stop{color:#9d332e;background:#ffe9e7}
+    .dark-btn{width:100%;margin-top:8px;color:#e7eff8;background:#18283b}
+    .sleep-note{margin-top:10px;padding:10px;border-radius:11px;background:#fffaf0;color:#725116;font-size:11px;line-height:1.5;font-weight:800}
+    body.sleep-dark{background:#02060c;color:#9fb0c4}
+    body.sleep-dark .app{background:#02060c;box-shadow:none}
+    body.sleep-dark .hero{background:#050c16;color:#8193a8}
+    body.sleep-dark .nav{background:rgba(4,10,18,.97);border-color:#132238}
+    body.sleep-dark .tab:not(.active){background:#0e1927;color:#63758a;border-color:#1b2c40}
+    body.sleep-dark main{background:#02060c}
+    body.sleep-dark .sleep-card{background:#06101d;border-color:#1b334c;box-shadow:none}
+    body.sleep-dark .sleep-card h2{color:#8fa5bc}
+    body.sleep-dark .sleep-card .eyebrow{color:#5e85ab}
+    body.sleep-dark .sleep-card .count{background:#102239;color:#7896b4}
+    body.sleep-dark .sleep-order{background:#091725;color:#718ba5}
+    body.sleep-dark .sleep-order b{background:#0b1a2a;border-color:#1b344d}
+    body.sleep-dark .voice-picker{background:#081522;border-color:#173149}
+    body.sleep-dark .voice-picker label,body.sleep-dark .voice-name{color:#6f8499}
+    body.sleep-dark .voice-select{background:#0c1c2c;color:#94a8bb;border-color:#21405d}
+    body.sleep-dark .voice-preview{background:#132b42;color:#84a8c9}
+    body.sleep-dark .sleep-now{background:#030912;border-color:#142940}
+    body.sleep-dark .sleep-meta{color:#52769a}
+    body.sleep-dark .sleep-stage{background:#173a5d;color:#9db7cf}
+    body.sleep-dark .sleep-ko{color:#73869a}
+    body.sleep-dark .sleep-en{color:#91a6ba}
+    body.sleep-dark .sleep-note{background:#111822;color:#748497}
+    body.sleep-dark .dark-btn{background:#dce9f5;color:#17314d}
     .noscript{margin:15px;padding:14px;border-radius:12px;background:#ffe9e7;color:#8b2f2b;font-weight:800}
     @media (min-width:640px){
       main{padding:22px}.card{padding:20px}.line{grid-template-columns:46px minmax(0,1fr) 205px;align-items:center}.speaker{width:46px;height:46px}.line-actions{grid-column:auto;margin:0}.sentence{font-size:20px}.meaning{font-size:13px}.toolbar-buttons{max-width:460px}.nav{padding:11px 20px}.tab{font-size:13px}}
@@ -192,6 +235,7 @@
       <button class="tab active" type="button" data-dialogue="0"><span>🤧</span>1번 · 감기</button>
       <button class="tab" type="button" data-dialogue="1"><span>🥛</span>2번 · 따뜻한 우유</button>
       <button class="tab" type="button" data-dialogue="2"><span>🧩</span>3번 · 수수께끼</button>
+      <button class="tab" type="button" data-sleep><span>🌙</span>무한 반복</button>
     </nav>
 
     <main id="main"></main>
@@ -229,7 +273,24 @@
     ];
 
     let selectedEnglishVoice = null;
+    let selectedKoreanVoice = null;
     let currentUtterance = null;
+    const KO_VOICE_KEY = 'surinamu-reading-ko-voice-v1';
+
+    function savedKoreanVoice(){
+      try{return localStorage.getItem(KO_VOICE_KEY)||''}catch(_){return ''}
+    }
+
+    function koreanVoiceScore(voice){
+      const name=(voice.name+' '+voice.voiceURI).toLowerCase();
+      let score=/^ko-KR/i.test(voice.lang)?100:70;
+      if(/natural|neural|premium|enhanced|online|siri/.test(name))score+=160;
+      if(/sunhi|seoyeon|yuna|sora|hyunsu|injoon|jimin|ji-min|jooyeon|bora/.test(name))score+=55;
+      if(/google/.test(name))score+=45;
+      if(/compact|espeak|festival|flite/.test(name))score-=130;
+      if(/heami/.test(name))score-=25;
+      return score;
+    }
 
     function loadEnglishVoice(){
       if(!('speechSynthesis' in window)) return;
@@ -239,14 +300,22 @@
         voices.find(v => /^en-US/i.test(v.lang)) ||
         voices.find(v => /^en/i.test(v.lang)) ||
         null;
+      const koreanVoices=voices.filter(v=>/^ko/i.test(v.lang));
+      const saved=savedKoreanVoice();
+      selectedKoreanVoice =
+        koreanVoices.find(v=>v.voiceURI===saved||v.name===saved) ||
+        [...koreanVoices].sort((a,b)=>koreanVoiceScore(b)-koreanVoiceScore(a))[0] ||
+        null;
     }
 
-    function buildUtterance(text){
+    function buildUtterance(text,lang='en-US'){
       loadEnglishVoice();
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = (selectedEnglishVoice && selectedEnglishVoice.lang) || 'en-US';
-      if(selectedEnglishVoice) utterance.voice = selectedEnglishVoice;
-      utterance.rate = 0.9;
+      const korean = /^ko/i.test(lang);
+      const voice = korean ? selectedKoreanVoice : selectedEnglishVoice;
+      utterance.lang = (voice && voice.lang) || lang;
+      if(voice) utterance.voice = voice;
+      utterance.rate = korean ? 1 : 0.9;
       utterance.pitch = 1;
       utterance.volume = 1;
       return utterance;
@@ -254,22 +323,62 @@
 
     if('speechSynthesis' in window){
       loadEnglishVoice();
-      window.speechSynthesis.onvoiceschanged = loadEnglishVoice;
+      window.speechSynthesis.onvoiceschanged = ()=>{
+        loadEnglishVoice();
+        populateKoreanVoiceSelect();
+      };
     }
     const main = document.getElementById('main');
     let activeDialogue = 0;
+    let activeView = 'dialogue';
     let queue = [];
     let queueIndex = 0;
     let runId = 0;
     let gapTimer = 0;
+    let sleepLoop = false;
+    let sleepCycle = 1;
+    let wakeLock = null;
 
     function esc(value){
       return String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
     }
 
+    function sleepPanelMarkup(){
+      const first=DIALOGUES[0].lines[0];
+      return `
+        <section class="panel sleep-panel ${activeView==='sleep'?'active':''}" data-panel="sleep">
+          <div class="guide"><span class="guide-icon">🌙</span><span><b>밤새 듣기 순서</b><br>11문장을 모두 들은 뒤 자동으로 처음부터 다시 시작합니다. 정지 버튼을 누르기 전까지 계속 반복됩니다.</span></div>
+          <article class="card sleep-card">
+            <div class="card-head">
+              <div><div class="eyebrow">1~3번 대화문 전체</div><h2>밤새 무한 반복</h2></div>
+              <span class="count">총 11문장</span>
+            </div>
+            <div class="sleep-order"><b>🇰🇷 한글 뜻<br>1회</b><span class="sleep-arrow">›</span><b>🇺🇸 영어<br>1회</b><span class="sleep-arrow">›</span><b>🇺🇸 영어<br>2회</b></div>
+            <div class="voice-picker">
+              <div><label for="koVoiceSelect">한국어 목소리 선택</label><select class="voice-select" id="koVoiceSelect" data-ko-voice><option value="">자동 선택</option></select></div>
+              <button class="voice-preview" type="button" data-ko-preview>🔊 미리 듣기</button>
+              <div class="voice-name" data-ko-voice-name>기기에서 가장 자연스러운 한국어 음성을 찾는 중입니다.</div>
+            </div>
+            <div class="sleep-now">
+              <div class="sleep-meta">시작 전 · 1번 대화문 · 1/11문장</div>
+              <div class="sleep-stage">재생 준비</div>
+              <div class="sleep-ko">${esc(first.ko)}</div>
+              <div class="sleep-en">${esc(first.text)}</div>
+            </div>
+            <div class="status" aria-live="polite"><span class="pulse"></span><span class="status-text">재생 준비</span></div>
+            <div class="sleep-controls">
+              <button class="sleep-start" type="button" data-sleep-start>▶ 무한 반복 시작</button>
+              <button class="sleep-stop" type="button" data-sleep-stop>■ 정지</button>
+            </div>
+            <button class="dark-btn" type="button" data-dark>🌙 수면 화면 어둡게</button>
+            <div class="sleep-note">지원되는 휴대폰에서는 재생 중 화면이 자동으로 꺼지지 않게 시도합니다. 배터리를 충분히 충전하거나 충전기에 연결해 주세요.</div>
+          </article>
+        </section>`;
+    }
+
     function render(){
-      main.innerHTML = DIALOGUES.map((dialogue,di)=>`
-        <section class="panel ${di===activeDialogue?'active':''}" data-panel="${di}">
+      const dialoguePanels = DIALOGUES.map((dialogue,di)=>`
+        <section class="panel ${activeView==='dialogue'&&di===activeDialogue?'active':''}" data-panel="${di}">
           <div class="guide"><span class="guide-icon">💡</span><span><b>연습 순서</b><br>문장을 보며 2~3회 듣기 → 소리 내어 따라 읽기 → ‘본문 가리기’로 암기 확인</span></div>
           <article class="card">
             <div class="card-head">
@@ -308,11 +417,21 @@
             <p class="tip">W는 여자 화자, M은 남자 화자입니다. 재생 중 다른 문장을 누르면 곧바로 새 문장으로 바뀝니다.</p>
           </article>
         </section>`).join('');
+      main.innerHTML = dialoguePanels + sleepPanelMarkup();
       bindPanel();
     }
 
     function bindPanel(){
       const panel = currentPanel();
+      if(activeView==='sleep'){
+        panel.querySelector('[data-sleep-start]').addEventListener('click',event=>startSleepLoop(event.currentTarget));
+        panel.querySelector('[data-sleep-stop]').addEventListener('click',()=>stopPlayback(true));
+        panel.querySelector('[data-dark]').addEventListener('click',toggleDarkMode);
+        panel.querySelector('[data-ko-voice]').addEventListener('change',selectKoreanVoice);
+        panel.querySelector('[data-ko-preview]').addEventListener('click',previewKoreanVoice);
+        populateKoreanVoiceSelect();
+        return;
+      }
       panel.querySelectorAll('[data-line]').forEach(btn=>btn.addEventListener('click',()=>{
         playLine(activeDialogue,Number(btn.dataset.line),Number(btn.dataset.repeat),btn);
       }));
@@ -324,13 +443,28 @@
       panel.querySelector('[data-memorize]').addEventListener('click',toggleMemorize);
     }
 
-    function currentPanel(){return document.querySelector(`.panel[data-panel="${activeDialogue}"]`)}
+    function currentPanel(){
+      return activeView==='sleep'
+        ? document.querySelector('.panel[data-panel="sleep"]')
+        : document.querySelector(`.panel[data-panel="${activeDialogue}"]`);
+    }
 
     function selectDialogue(index){
-      if(index===activeDialogue)return;
+      if(activeView==='dialogue'&&index===activeDialogue)return;
       stopPlayback(false);
+      activeView='dialogue';
       activeDialogue=index;
-      document.querySelectorAll('.tab').forEach((tab,i)=>tab.classList.toggle('active',i===index));
+      document.body.classList.remove('sleep-dark');
+      document.querySelectorAll('.tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.dialogue===String(index)));
+      render();
+      window.scrollTo({top:document.querySelector('.nav').offsetTop,behavior:'smooth'});
+    }
+
+    function selectSleep(){
+      if(activeView==='sleep')return;
+      stopPlayback(false);
+      activeView='sleep';
+      document.querySelectorAll('.tab').forEach(tab=>tab.classList.toggle('active',tab.hasAttribute('data-sleep')));
       render();
       window.scrollTo({top:document.querySelector('.nav').offsetTop,behavior:'smooth'});
     }
@@ -356,6 +490,29 @@
       startQueue();
     }
 
+    function makeSleepQueue(){
+      const items=[];
+      DIALOGUES.forEach((dialogue,di)=>dialogue.lines.forEach((line,li)=>{
+        items.push({id:line.id,di,li,pass:1,totalPasses:1,mode:'sleep',lang:'ko-KR'});
+        items.push({id:line.id,di,li,pass:1,totalPasses:2,mode:'sleep',lang:'en-US'});
+        items.push({id:line.id,di,li,pass:2,totalPasses:2,mode:'sleep',lang:'en-US'});
+      }));
+      return items;
+    }
+
+    function startSleepLoop(button){
+      stopPlayback(false);
+      sleepLoop=true;
+      sleepCycle=1;
+      queue=makeSleepQueue();
+      markButton(button);
+      document.body.classList.add('sleep-dark');
+      const darkButton=currentPanel().querySelector('[data-dark]');
+      if(darkButton)darkButton.textContent='☀️ 밝은 화면으로';
+      requestScreenWakeLock();
+      startQueue();
+    }
+
     function startQueue(){
       queueIndex=0;
       const myRun=++runId;
@@ -367,6 +524,14 @@
     function playNext(myRun){
       if(myRun!==runId)return;
       if(queueIndex>=queue.length){
+        if(sleepLoop){
+          sleepCycle++;
+          queueIndex=0;
+          showStatus(`${sleepCycle-1}번째 전체 순환 완료 · 잠시 후 다시 시작합니다.`,false);
+          clearTimeout(gapTimer);
+          gapTimer=setTimeout(()=>playNext(myRun),1100);
+          return;
+        }
         finishPlayback();
         return;
       }
@@ -377,13 +542,17 @@
       const item=queue[queueIndex];
       const dialogue=DIALOGUES[item.di];
       const line=dialogue.lines[item.li];
-      highlight(item.id);
-      const statusText=item.mode==='whole'
-        ? `${dialogue.label} · ${item.li+1}/${dialogue.lines.length}문장 · 전체 ${item.pass}/${item.totalPasses}회`
-        : `${item.li+1}번 문장 · ${item.pass}/${item.totalPasses}회 듣는 중`;
+      if(item.mode==='sleep') updateSleepDisplay(item,dialogue,line);
+      else highlight(item.id);
+      const statusText=item.mode==='sleep'
+        ? `${sleepCycle}번째 순환 · ${item.lang==='ko-KR'?'한글 뜻 1회':`영어 ${item.pass}/2회`}`
+        : item.mode==='whole'
+          ? `${dialogue.label} · ${item.li+1}/${dialogue.lines.length}문장 · 전체 ${item.pass}/${item.totalPasses}회`
+          : `${item.li+1}번 문장 · ${item.pass}/${item.totalPasses}회 듣는 중`;
       showStatus(statusText);
 
-      const utterance=buildUtterance(line.text);
+      const speechText=item.mode==='sleep'&&item.lang==='ko-KR' ? line.ko : line.text;
+      const utterance=buildUtterance(speechText,item.mode==='sleep'?item.lang:'en-US');
       currentUtterance=utterance;
       utterance.onend=()=>{
         if(myRun!==runId || currentUtterance!==utterance)return;
@@ -403,6 +572,8 @@
     function stopPlayback(showMessage){
       runId++;
       clearTimeout(gapTimer);
+      sleepLoop=false;
+      releaseScreenWakeLock();
       currentUtterance=null;
       try{window.speechSynthesis.cancel()}catch(_){ }
       queue=[];
@@ -417,9 +588,104 @@
       setTimeout(hideStatus,2600);
     }
 
+    function updateSleepDisplay(item,dialogue,line){
+      const panel=currentPanel();
+      if(!panel)return;
+      const before=DIALOGUES.slice(0,item.di).reduce((sum,d)=>sum+d.lines.length,0);
+      const number=before+item.li+1;
+      panel.querySelector('.sleep-meta').textContent=`${sleepCycle}번째 순환 · ${dialogue.label} · ${number}/11문장`;
+      panel.querySelector('.sleep-stage').textContent=item.lang==='ko-KR'?'🇰🇷 한글 뜻 1회':'🇺🇸 영어 '+item.pass+'/2회';
+      panel.querySelector('.sleep-ko').textContent=line.ko;
+      panel.querySelector('.sleep-en').textContent=line.text;
+    }
+
+    function populateKoreanVoiceSelect(){
+      if(activeView!=='sleep'||!('speechSynthesis' in window))return;
+      const panel=currentPanel();
+      const select=panel&&panel.querySelector('[data-ko-voice]');
+      const label=panel&&panel.querySelector('[data-ko-voice-name]');
+      if(!select||!label)return;
+      const voices=(window.speechSynthesis.getVoices()||[])
+        .filter(v=>/^ko/i.test(v.lang))
+        .sort((a,b)=>koreanVoiceScore(b)-koreanVoiceScore(a));
+      if(!voices.length){
+        select.innerHTML='<option value="">한국어 음성 불러오는 중…</option>';
+        label.textContent='한국어 음성이 나타나지 않으면 휴대폰의 음성 설정에서 한국어 목소리를 추가해 주세요.';
+        return;
+      }
+      select.innerHTML='<option value="">자동 선택 · 추천</option>'+voices.map(v=>{
+        const uri=v.voiceURI||v.name;
+        const natural=/natural|neural|premium|enhanced|online|siri|google/i.test(v.name+' '+v.voiceURI);
+        return `<option value="${esc(uri)}">${natural?'★ ':''}${esc(v.name)}</option>`;
+      }).join('');
+      const saved=savedKoreanVoice();
+      select.value=voices.some(v=>(v.voiceURI||v.name)===saved)?saved:'';
+      loadEnglishVoice();
+      label.textContent=selectedKoreanVoice
+        ? `현재 사용: ${selectedKoreanVoice.name} · ${selectedKoreanVoice.lang}`
+        : '사용할 수 있는 한국어 음성을 찾지 못했습니다.';
+    }
+
+    function selectKoreanVoice(event){
+      const value=event.currentTarget.value;
+      try{
+        if(value)localStorage.setItem(KO_VOICE_KEY,value);
+        else localStorage.removeItem(KO_VOICE_KEY);
+      }catch(_){ }
+      loadEnglishVoice();
+      populateKoreanVoiceSelect();
+    }
+
+    function previewKoreanVoice(){
+      stopPlayback(false);
+      if(!('speechSynthesis' in window)){
+        showStatus('이 브라우저에서는 음성 재생을 지원하지 않습니다.',false);
+        return;
+      }
+      const previewRun=runId;
+      const utterance=buildUtterance('나는 어제 따뜻하게 입지 않아서 감기에 걸린 것 같아.','ko-KR');
+      currentUtterance=utterance;
+      showStatus('선택한 한국어 목소리를 미리 듣는 중…');
+      utterance.onend=()=>{
+        if(previewRun!==runId||currentUtterance!==utterance)return;
+        currentUtterance=null;
+        showStatus('이 목소리로 한글 뜻을 읽습니다.',false);
+        setTimeout(hideStatus,1400);
+      };
+      utterance.onerror=()=>{
+        if(previewRun!==runId)return;
+        currentUtterance=null;
+        showStatus('이 목소리는 현재 기기에서 재생되지 않습니다.',false);
+      };
+      setTimeout(()=>{
+        if(previewRun===runId)window.speechSynthesis.speak(utterance);
+      },80);
+    }
+
+    function toggleDarkMode(event){
+      document.body.classList.toggle('sleep-dark');
+      const dark=document.body.classList.contains('sleep-dark');
+      event.currentTarget.textContent=dark?'☀️ 밝은 화면으로':'🌙 수면 화면 어둡게';
+    }
+
+    async function requestScreenWakeLock(){
+      if(wakeLock||!('wakeLock' in navigator))return;
+      try{
+        wakeLock=await navigator.wakeLock.request('screen');
+        wakeLock.addEventListener('release',()=>{wakeLock=null},{once:true});
+      }catch(_){wakeLock=null}
+    }
+
+    async function releaseScreenWakeLock(){
+      if(!wakeLock)return;
+      const lock=wakeLock;
+      wakeLock=null;
+      try{await lock.release()}catch(_){ }
+    }
+
     function markButton(button){clearMarks();button.classList.add('active')}
     function clearMarks(){
-      document.querySelectorAll('.line.playing,.repeat.active,.whole.active').forEach(el=>el.classList.remove('playing','active'));
+      document.querySelectorAll('.line.playing,.repeat.active,.whole.active,.sleep-start.active').forEach(el=>el.classList.remove('playing','active'));
     }
     function highlight(id){
       document.querySelectorAll('.line.playing').forEach(el=>el.classList.remove('playing'));
@@ -447,9 +713,13 @@
       event.currentTarget.textContent=on?'👀 본문 다시 보기':'🙈 본문 가리기';
     }
 
-    document.querySelectorAll('.tab').forEach((tab,i)=>tab.addEventListener('click',()=>selectDialogue(i)));
-    document.addEventListener('visibilitychange',()=>{if(document.hidden)stopPlayback(false)});
-    window.addEventListener('pagehide',()=>stopPlayback(false));
+    document.querySelectorAll('[data-dialogue]').forEach(tab=>tab.addEventListener('click',()=>selectDialogue(Number(tab.dataset.dialogue))));
+    document.querySelector('[data-sleep]').addEventListener('click',selectSleep);
+    document.addEventListener('visibilitychange',()=>{
+      if(document.visibilityState==='visible'&&sleepLoop)requestScreenWakeLock();
+      else if(document.hidden&&!sleepLoop)stopPlayback(false);
+    });
+    window.addEventListener('pagehide',()=>{if(!sleepLoop)stopPlayback(false)});
     render();
   </script>
 </body>
